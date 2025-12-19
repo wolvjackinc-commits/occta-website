@@ -552,21 +552,21 @@
     /* Service selector */
     .selector-shell{
       margin-top: 18px;
-      background: linear-gradient(135deg, #ffffff 0%, #f7f8fb 100%);
+      background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
       border: 1px solid rgba(15,23,42,.06);
       border-radius: var(--r-xl);
-      padding: 24px;
-      box-shadow: var(--shadow-card);
+      padding: 26px;
+      box-shadow: 0 16px 44px rgba(15,23,42,.08);
     }
     .selector-shell .section-head{
-      margin-bottom: 16px;
+      margin-bottom: 12px;
     }
     .tabs{
       display:flex;
       gap:10px;
       flex-wrap:wrap;
       background: rgba(15,23,42,.04);
-      border: 1px solid rgba(15,23,42,.08);
+      border: 1px solid rgba(15,23,42,.06);
       border-radius: 14px;
       padding: 6px;
     }
@@ -577,8 +577,8 @@
       padding: 10px 16px;
       border-radius: 12px;
       font-size: 14px;
-      font-weight: 900;
-      color: rgba(15,23,42,.68);
+      font-weight: 800;
+      color: rgba(15,23,42,.70);
       letter-spacing: .01em;
       transition: background .18s ease, color .18s ease, transform .18s ease, box-shadow .18s ease;
     }
@@ -590,7 +590,7 @@
     .tab.is-active{
       background: #0f172a;
       color: #fff;
-      box-shadow: 0 12px 30px rgba(15,23,42,.22);
+      box-shadow: 0 10px 28px rgba(15,23,42,.16);
     }
 
     .tab-panels{
@@ -604,8 +604,8 @@
       background:#fff;
       border: 1px solid rgba(15,23,42,.06);
       border-radius: 18px;
-      padding: 18px;
-      box-shadow: 0 18px 46px rgba(15,23,42,.08);
+      padding: 22px;
+      box-shadow: 0 18px 44px rgba(15,23,42,.08);
     }
     .panel.is-active{
       display:block;
@@ -622,9 +622,9 @@
       justify-content:space-between;
       gap: 18px;
       flex-wrap:wrap;
-      padding-bottom: 12px;
+      padding-bottom: 14px;
       border-bottom: 1px solid rgba(15,23,42,.08);
-      margin-bottom: 12px;
+      margin-bottom: 18px;
     }
     .panel-meta{
       max-width: 640px;
@@ -642,26 +642,54 @@
     .feature-pills{
       display:flex;
       flex-wrap:wrap;
-      gap: 10px;
+      gap: 8px;
+      margin-top: 10px;
     }
     .feature-pill{
-      padding: 7px 12px;
-      border-radius: 999px;
-      border: 1px solid rgba(15,23,42,.10);
-      background: rgba(15,23,42,.04);
+      padding: 6px 10px;
+      border-radius: 10px;
+      border: 1px solid rgba(15,23,42,.08);
+      background: rgba(15,23,42,.03);
       font-size: 12px;
       font-weight: 800;
-      color: rgba(15,23,42,.72);
+      color: rgba(15,23,42,.70);
       letter-spacing: .01em;
       white-space: nowrap;
     }
     .panel-summary{
-      min-width: 220px;
+      min-width: 240px;
       text-align:right;
       font-size: 12.5px;
-      color: rgba(15,23,42,.68);
+      color: rgba(15,23,42,.70);
       font-weight: 700;
       letter-spacing: .01em;
+    }
+
+    .panel-body{
+      display:grid;
+      grid-template-columns: 0.75fr 1.25fr;
+      gap: 18px;
+      align-items:start;
+      margin-top: 10px;
+    }
+
+    .panel-card{
+      background:#fff;
+      border:1px solid rgba(15,23,42,.06);
+      border-radius: 16px;
+      padding: 16px;
+      box-shadow: 0 12px 32px rgba(15,23,42,.06);
+      height: 100%;
+    }
+    .panel-card h4{
+      font-family:"Space Grotesk";
+      font-size: 16px;
+      margin-bottom: 6px;
+    }
+    .panel-card p{
+      color: rgba(15,23,42,.70);
+      font-size: 13.5px;
+      line-height: 1.5;
     }
 
     .plan-grid{
@@ -673,31 +701,31 @@
       background:#fff;
       border: 1px solid rgba(15,23,42,.08);
       border-radius: 16px;
-      padding: 16px;
-      box-shadow: 0 16px 40px rgba(15,23,42,.08);
+      padding: 18px;
+      box-shadow: 0 14px 36px rgba(15,23,42,.08);
       display:flex;
       flex-direction:column;
       gap: 12px;
-      height:100%;
+      min-height: 100%;
     }
     .plan-card header{
       display:flex;
       justify-content:space-between;
       align-items:flex-start;
-      gap: 10px;
+      gap: 12px;
     }
     .plan-name{
       font-size: 15px;
       font-weight: 900;
       color: rgba(15,23,42,.92);
-      line-height: 1.3;
+      line-height: 1.35;
     }
     .plan-chip{
       font-size: 11px;
       font-weight: 900;
       padding: 6px 10px;
-      border-radius: 999px;
-      background: rgba(37,99,235,.12);
+      border-radius: 10px;
+      background: rgba(37,99,235,.10);
       border: 1px solid rgba(37,99,235,.18);
       color: rgba(15,23,42,.85);
       white-space: nowrap;
@@ -706,8 +734,8 @@
       display:flex;
       align-items:flex-end;
       gap: 6px;
-      font-size: 13px;
-      color: rgba(15,23,42,.65);
+      font-size: 12px;
+      color: rgba(15,23,42,.60);
       font-weight: 800;
       letter-spacing: .01em;
     }
@@ -718,43 +746,69 @@
     }
     .plan-price .amount{
       font-family:"Space Grotesk";
-      font-size: 34px;
+      font-size: 36px;
       color: #0f172a;
+      line-height: 1;
     }
     .plan-price .per{
       padding-bottom: 6px;
     }
-    .plan-points{
-      margin: 0;
-      padding-left: 16px;
+    .plan-specs{
       display:grid;
-      gap: 8px;
-      color: rgba(15,23,42,.74);
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 10px;
+      padding-top: 6px;
+    }
+    .plan-spec{
+      background: rgba(15,23,42,.02);
+      border: 1px solid rgba(15,23,42,.06);
+      border-radius: 12px;
+      padding: 10px 12px;
+    }
+    .plan-spec small{
+      display:block;
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing:.08em;
+      text-transform:uppercase;
+      color: rgba(15,23,42,.55);
+    }
+    .plan-spec strong{
+      display:block;
       font-size: 13px;
-      line-height: 1.5;
+      font-weight: 900;
+      color: rgba(15,23,42,.85);
+      margin-top: 4px;
+      line-height: 1.3;
     }
     .plan-cta{
       margin-top: auto;
       border: none;
-      border-radius: 12px;
-      padding: 12px 14px;
+      border-radius: 10px;
+      padding: 11px 12px;
       font-size: 13px;
       font-weight: 900;
       cursor:pointer;
       background: #0f172a;
       color:#fff;
       transition: transform .16s ease, box-shadow .16s ease, background .16s ease;
-      box-shadow: 0 18px 46px rgba(15,23,42,.18);
+      box-shadow: 0 14px 32px rgba(15,23,42,.16);
+      width: 100%;
     }
     .plan-cta:hover{
       transform: translateY(-1px);
-      box-shadow: 0 24px 60px rgba(15,23,42,.22);
+      box-shadow: 0 18px 44px rgba(15,23,42,.20);
       background: #111827;
     }
-    .panel-legal{
-      margin-top: 14px;
-      font-size: 11.5px;
+    .plan-foot{
+      font-size: 12px;
       color: rgba(15,23,42,.60);
+      line-height: 1.4;
+    }
+    .panel-legal{
+      margin-top: 16px;
+      font-size: 11.5px;
+      color: rgba(15,23,42,.62);
       letter-spacing: .01em;
     }
 
@@ -806,6 +860,11 @@
     }
 
     /* Responsive */
+    @media (max-width: 1100px){
+      .panel-body{grid-template-columns: 1fr;}
+      .panel-summary{text-align:left;}
+      .plan-grid{grid-template-columns: repeat(2, minmax(0, 1fr));}
+    }
     @media (max-width: 980px){
       .menu{display:none}
       .brand-grid{flex-direction:column; align-items:flex-start}
@@ -815,6 +874,7 @@
       .hero-frame{inset: 16px 16px}
       .plan{max-width: none}
 
+      .panel-body{grid-template-columns: 1fr;}
       .plan-grid{grid-template-columns: 1fr;}
       .cards .card{grid-column: span 12;}
     }
@@ -1012,54 +1072,64 @@
                 <div class="panel-summary">Get paired with the right speed, then keep tabs on status from install to day-to-day performance.</div>
               </div>
 
-              <div class="plan-grid">
-                <article class="plan-card">
-                  <header>
-                    <div class="plan-name">Full Fibre 150</div>
-                    <span class="plan-chip">Most chosen</span>
-                  </header>
-                  <div class="plan-price">from <span class="currency">£</span><span class="amount">19.99</span><span class="per">/mo</span></div>
-                  <ul class="plan-points">
-                    <li>Avg. download 150 Mbps</li>
-                    <li>Unlimited data</li>
-                    <li>Router included</li>
-                    <li>£0 activation</li>
-                    <li>Contract: 24 months</li>
-                  </ul>
-                  <button class="plan-cta" type="button" onclick="scrollToChecker()">Get Full Fibre 150 →</button>
-                </article>
+              <div class="panel-body">
+                <div class="panel-card">
+                  <h4>What you’ll get</h4>
+                  <p>Modern connectivity with simple onboarding and a team that doesn’t disappear after install day.</p>
+                </div>
 
-                <article class="plan-card">
-                  <header>
-                    <div class="plan-name">Full Fibre 500</div>
-                    <span class="plan-chip">Performance</span>
-                  </header>
-                  <div class="plan-price">from <span class="currency">£</span><span class="amount">29.99</span><span class="per">/mo</span></div>
-                  <ul class="plan-points">
-                    <li>Avg. download 500 Mbps</li>
-                    <li>Unlimited data</li>
-                    <li>Router included</li>
-                    <li>£0 activation</li>
-                    <li>Contract: 24 months</li>
-                  </ul>
-                  <button class="plan-cta" type="button" onclick="scrollToChecker()">Upgrade to 500 →</button>
-                </article>
+                <div class="plan-grid">
+                  <article class="plan-card">
+                    <header>
+                      <span class="plan-chip">Popular</span>
+                      <div class="plan-name">Full Fibre 150</div>
+                    </header>
+                    <div class="plan-price">from <span class="currency">£</span><span class="amount">19.99</span><span class="per">/mo</span></div>
+                    <div class="plan-specs">
+                      <div class="plan-spec"><small>Speed</small><strong>Avg. 150 Mbps</strong></div>
+                      <div class="plan-spec"><small>Data</small><strong>Unlimited</strong></div>
+                      <div class="plan-spec"><small>Setup</small><strong>£0 activation</strong></div>
+                      <div class="plan-spec"><small>Router</small><strong>Included</strong></div>
+                      <div class="plan-spec"><small>Contract</small><strong>24 months</strong></div>
+                    </div>
+                    <button class="plan-cta" type="button" onclick="scrollToChecker()">Get Full Fibre 150 →</button>
+                    <div class="plan-foot">Balanced speed for homes working and streaming every day.</div>
+                  </article>
 
-                <article class="plan-card">
-                  <header>
-                    <div class="plan-name">Full Fibre 900</div>
-                    <span class="plan-chip">Fastest</span>
-                  </header>
-                  <div class="plan-price">from <span class="currency">£</span><span class="amount">39.99</span><span class="per">/mo</span></div>
-                  <ul class="plan-points">
-                    <li>Avg. download 900 Mbps</li>
-                    <li>Unlimited data</li>
-                    <li>Router included</li>
-                    <li>£0 activation</li>
-                    <li>Contract: 24 months</li>
-                  </ul>
-                  <button class="plan-cta" type="button" onclick="scrollToChecker()">Go Ultra (900) →</button>
-                </article>
+                  <article class="plan-card">
+                    <header>
+                      <span class="plan-chip">Best value</span>
+                      <div class="plan-name">Full Fibre 500</div>
+                    </header>
+                    <div class="plan-price">from <span class="currency">£</span><span class="amount">29.99</span><span class="per">/mo</span></div>
+                    <div class="plan-specs">
+                      <div class="plan-spec"><small>Speed</small><strong>Avg. 500 Mbps</strong></div>
+                      <div class="plan-spec"><small>Data</small><strong>Unlimited</strong></div>
+                      <div class="plan-spec"><small>Setup</small><strong>£0 activation</strong></div>
+                      <div class="plan-spec"><small>Router</small><strong>Included</strong></div>
+                      <div class="plan-spec"><small>Contract</small><strong>24 months</strong></div>
+                    </div>
+                    <button class="plan-cta" type="button" onclick="scrollToChecker()">Upgrade to 500 →</button>
+                    <div class="plan-foot">Room for gamers, UHD streaming, and multiple busy devices.</div>
+                  </article>
+
+                  <article class="plan-card">
+                    <header>
+                      <span class="plan-chip">Fast</span>
+                      <div class="plan-name">Full Fibre 900</div>
+                    </header>
+                    <div class="plan-price">from <span class="currency">£</span><span class="amount">39.99</span><span class="per">/mo</span></div>
+                    <div class="plan-specs">
+                      <div class="plan-spec"><small>Speed</small><strong>Avg. 900 Mbps</strong></div>
+                      <div class="plan-spec"><small>Data</small><strong>Unlimited</strong></div>
+                      <div class="plan-spec"><small>Setup</small><strong>£0 activation</strong></div>
+                      <div class="plan-spec"><small>Router</small><strong>Included</strong></div>
+                      <div class="plan-spec"><small>Contract</small><strong>24 months</strong></div>
+                    </div>
+                    <button class="plan-cta" type="button" onclick="scrollToChecker()">Go Ultra (900) →</button>
+                    <div class="plan-foot">Built for 4K households, heavy uploads, and no waiting around.</div>
+                  </article>
+                </div>
               </div>
 
               <p class="panel-legal">Prices shown are introductory. Availability, speeds and terms may vary. T&amp;Cs apply.</p>
@@ -1081,51 +1151,64 @@
                 <div class="panel-summary">Switch without fuss, manage usage easily, and keep calls and texts unlimited on every tier.</div>
               </div>
 
-              <div class="plan-grid">
-                <article class="plan-card">
-                  <header>
-                    <div class="plan-name">Essential 30GB</div>
-                    <span class="plan-chip">Entry</span>
-                  </header>
-                  <div class="plan-price">from <span class="currency">£</span><span class="amount">8</span><span class="per">/mo</span></div>
-                  <ul class="plan-points">
-                    <li>30GB data</li>
-                    <li>Unlimited UK calls &amp; texts</li>
-                    <li>5G ready</li>
-                    <li>Contract: 12 months</li>
-                  </ul>
-                  <button class="plan-cta" type="button" onclick="goToContact()">Get this SIM →</button>
-                </article>
+              <div class="panel-body">
+                <div class="panel-card">
+                  <h4>What you’ll get</h4>
+                  <p>Clear allowances, unlimited UK calls and texts, and guidance on roaming before you travel.</p>
+                </div>
 
-                <article class="plan-card">
-                  <header>
-                    <div class="plan-name">Everyday 100GB</div>
-                    <span class="plan-chip">Best value</span>
-                  </header>
-                  <div class="plan-price">from <span class="currency">£</span><span class="amount">12</span><span class="per">/mo</span></div>
-                  <ul class="plan-points">
-                    <li>100GB data</li>
-                    <li>Unlimited UK calls &amp; texts</li>
-                    <li>5G ready</li>
-                    <li>Contract: 12 months</li>
-                  </ul>
-                  <button class="plan-cta" type="button" onclick="goToContact()">Pick 100GB →</button>
-                </article>
+                <div class="plan-grid">
+                  <article class="plan-card">
+                    <header>
+                      <span class="plan-chip">Popular</span>
+                      <div class="plan-name">Essential 30GB</div>
+                    </header>
+                    <div class="plan-price">from <span class="currency">£</span><span class="amount">8</span><span class="per">/mo</span></div>
+                    <div class="plan-specs">
+                      <div class="plan-spec"><small>Data</small><strong>30GB</strong></div>
+                      <div class="plan-spec"><small>Calls</small><strong>Unlimited UK</strong></div>
+                      <div class="plan-spec"><small>Texts</small><strong>Unlimited UK</strong></div>
+                      <div class="plan-spec"><small>Network</small><strong>5G ready</strong></div>
+                      <div class="plan-spec"><small>Contract</small><strong>12 months</strong></div>
+                    </div>
+                    <button class="plan-cta" type="button" onclick="goToContact()">Get this SIM →</button>
+                    <div class="plan-foot">Everyday data for socials, messaging, and steady streaming.</div>
+                  </article>
 
-                <article class="plan-card">
-                  <header>
-                    <div class="plan-name">Unlimited</div>
-                    <span class="plan-chip">All data</span>
-                  </header>
-                  <div class="plan-price">from <span class="currency">£</span><span class="amount">18</span><span class="per">/mo</span></div>
-                  <ul class="plan-points">
-                    <li>Unlimited data</li>
-                    <li>Unlimited UK calls &amp; texts</li>
-                    <li>5G ready</li>
-                    <li>Contract: 12 months</li>
-                  </ul>
-                  <button class="plan-cta" type="button" onclick="goToContact()">Go Unlimited →</button>
-                </article>
+                  <article class="plan-card">
+                    <header>
+                      <span class="plan-chip">Best value</span>
+                      <div class="plan-name">Everyday 100GB</div>
+                    </header>
+                    <div class="plan-price">from <span class="currency">£</span><span class="amount">12</span><span class="per">/mo</span></div>
+                    <div class="plan-specs">
+                      <div class="plan-spec"><small>Data</small><strong>100GB</strong></div>
+                      <div class="plan-spec"><small>Calls</small><strong>Unlimited UK</strong></div>
+                      <div class="plan-spec"><small>Texts</small><strong>Unlimited UK</strong></div>
+                      <div class="plan-spec"><small>Network</small><strong>5G ready</strong></div>
+                      <div class="plan-spec"><small>Contract</small><strong>12 months</strong></div>
+                    </div>
+                    <button class="plan-cta" type="button" onclick="goToContact()">Pick 100GB →</button>
+                    <div class="plan-foot">Stream, browse, and hotspot with breathing room to spare.</div>
+                  </article>
+
+                  <article class="plan-card">
+                    <header>
+                      <span class="plan-chip">All data</span>
+                      <div class="plan-name">Unlimited</div>
+                    </header>
+                    <div class="plan-price">from <span class="currency">£</span><span class="amount">18</span><span class="per">/mo</span></div>
+                    <div class="plan-specs">
+                      <div class="plan-spec"><small>Data</small><strong>Unlimited</strong></div>
+                      <div class="plan-spec"><small>Calls</small><strong>Unlimited UK</strong></div>
+                      <div class="plan-spec"><small>Texts</small><strong>Unlimited UK</strong></div>
+                      <div class="plan-spec"><small>Network</small><strong>5G ready</strong></div>
+                      <div class="plan-spec"><small>Contract</small><strong>12 months</strong></div>
+                    </div>
+                    <button class="plan-cta" type="button" onclick="goToContact()">Go Unlimited →</button>
+                    <div class="plan-foot">For power users and tethering without watching the meter.</div>
+                  </article>
+                </div>
               </div>
 
               <p class="panel-legal">Prices shown are introductory. Availability, speeds and terms may vary. T&amp;Cs apply.</p>
@@ -1147,54 +1230,64 @@
                 <div class="panel-summary">Bundle once, manage once. We align activation dates and keep everything in one dashboard.</div>
               </div>
 
-              <div class="plan-grid">
-                <article class="plan-card">
-                  <header>
-                    <div class="plan-name">Bundle Starter</div>
-                    <span class="plan-chip">Broadband + SIM</span>
-                  </header>
-                  <div class="plan-price">from <span class="currency">£</span><span class="amount">24.99</span><span class="per">/mo</span></div>
-                  <ul class="plan-points">
-                    <li>Full Fibre 150</li>
-                    <li>30GB SIM</li>
-                    <li>Single monthly bill</li>
-                    <li>Router included</li>
-                    <li>Contract: 24 months</li>
-                  </ul>
-                  <button class="plan-cta" type="button" onclick="scrollToChecker()">Start my bundle →</button>
-                </article>
+              <div class="panel-body">
+                <div class="panel-card">
+                  <h4>What you’ll get</h4>
+                  <p>One relationship, one bill, and coordinated activation so broadband and SIMs go live together.</p>
+                </div>
 
-                <article class="plan-card">
-                  <header>
-                    <div class="plan-name">Bundle Family</div>
-                    <span class="plan-chip">Household</span>
-                  </header>
-                  <div class="plan-price">from <span class="currency">£</span><span class="amount">34.99</span><span class="per">/mo</span></div>
-                  <ul class="plan-points">
-                    <li>Full Fibre 500</li>
-                    <li>100GB SIM</li>
-                    <li>Single monthly bill</li>
-                    <li>Router included</li>
-                    <li>Contract: 24 months</li>
-                  </ul>
-                  <button class="plan-cta" type="button" onclick="scrollToChecker()">Get family bundle →</button>
-                </article>
+                <div class="plan-grid">
+                  <article class="plan-card">
+                    <header>
+                      <span class="plan-chip">Broadband + SIM</span>
+                      <div class="plan-name">Bundle Starter</div>
+                    </header>
+                    <div class="plan-price">from <span class="currency">£</span><span class="amount">24.99</span><span class="per">/mo</span></div>
+                    <div class="plan-specs">
+                      <div class="plan-spec"><small>Broadband</small><strong>Full Fibre 150</strong></div>
+                      <div class="plan-spec"><small>SIM</small><strong>30GB</strong></div>
+                      <div class="plan-spec"><small>Billing</small><strong>Single bill</strong></div>
+                      <div class="plan-spec"><small>Router</small><strong>Included</strong></div>
+                      <div class="plan-spec"><small>Contract</small><strong>24 months</strong></div>
+                    </div>
+                    <button class="plan-cta" type="button" onclick="scrollToChecker()">Start my bundle →</button>
+                    <div class="plan-foot">Great value entry for couples or smaller homes.</div>
+                  </article>
 
-                <article class="plan-card">
-                  <header>
-                    <div class="plan-name">Bundle Pro</div>
-                    <span class="plan-chip">All-in</span>
-                  </header>
-                  <div class="plan-price">from <span class="currency">£</span><span class="amount">44.99</span><span class="per">/mo</span></div>
-                  <ul class="plan-points">
-                    <li>Full Fibre 900</li>
-                    <li>Unlimited SIM</li>
-                    <li>Single monthly bill</li>
-                    <li>Router included</li>
-                    <li>Contract: 24 months</li>
-                  </ul>
-                  <button class="plan-cta" type="button" onclick="scrollToChecker()">Go Pro →</button>
-                </article>
+                  <article class="plan-card">
+                    <header>
+                      <span class="plan-chip">Household</span>
+                      <div class="plan-name">Bundle Family</div>
+                    </header>
+                    <div class="plan-price">from <span class="currency">£</span><span class="amount">34.99</span><span class="per">/mo</span></div>
+                    <div class="plan-specs">
+                      <div class="plan-spec"><small>Broadband</small><strong>Full Fibre 500</strong></div>
+                      <div class="plan-spec"><small>SIM</small><strong>100GB</strong></div>
+                      <div class="plan-spec"><small>Billing</small><strong>Single bill</strong></div>
+                      <div class="plan-spec"><small>Router</small><strong>Included</strong></div>
+                      <div class="plan-spec"><small>Contract</small><strong>24 months</strong></div>
+                    </div>
+                    <button class="plan-cta" type="button" onclick="scrollToChecker()">Get family bundle →</button>
+                    <div class="plan-foot">Enough speed and data for busy households across devices.</div>
+                  </article>
+
+                  <article class="plan-card">
+                    <header>
+                      <span class="plan-chip">All-in</span>
+                      <div class="plan-name">Bundle Pro</div>
+                    </header>
+                    <div class="plan-price">from <span class="currency">£</span><span class="amount">44.99</span><span class="per">/mo</span></div>
+                    <div class="plan-specs">
+                      <div class="plan-spec"><small>Broadband</small><strong>Full Fibre 900</strong></div>
+                      <div class="plan-spec"><small>SIM</small><strong>Unlimited</strong></div>
+                      <div class="plan-spec"><small>Billing</small><strong>Single bill</strong></div>
+                      <div class="plan-spec"><small>Router</small><strong>Included</strong></div>
+                      <div class="plan-spec"><small>Contract</small><strong>24 months</strong></div>
+                    </div>
+                    <button class="plan-cta" type="button" onclick="scrollToChecker()">Go Pro →</button>
+                    <div class="plan-foot">Top-tier fibre and SIM for those who want everything covered.</div>
+                  </article>
+                </div>
               </div>
 
               <p class="panel-legal">Prices shown are introductory. Availability, speeds and terms may vary. T&amp;Cs apply.</p>
