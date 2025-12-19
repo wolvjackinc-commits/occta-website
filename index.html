@@ -1,1 +1,1408 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Occta Limited — Full Fibre Broadband, SIM Plans & Landline</title>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root{
+      --bg:#f6f4ef;
+      --text:#0f172a;
+      --muted:#6b7280;
+      --line: rgba(15,23,42,.10);
+
+      --white:#ffffff;
+      --ink:#0b1220;
+
+      --blue:#2563eb;
+      --orange:#f97316;
+      --yellow:#facc15;
+
+      --r-xl:26px;
+      --r-lg:20px;
+      --r-md:16px;
+
+      --shadow-soft: 0 28px 70px rgba(15,23,42,.12);
+      --shadow-card: 0 18px 50px rgba(15,23,42,.10);
+
+      --container-max: 1320px;
+      --pad: 28px;
+    }
+
+    *{box-sizing:border-box;margin:0;padding:0}
+    html,body{height:100%}
+    body{
+      font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      background: radial-gradient(circle at top, #fbf9f6 0%, #f6f4ef 55%, #eef1f5 100%);
+      color: var(--text);
+      line-height: 1.55;
+    }
+    a{color:inherit;text-decoration:none}
+    .container{max-width:var(--container-max); margin:0 auto; padding: 0 var(--pad);}
+
+    /* Header */
+    header{
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      background: rgba(255,255,255,.92);
+      backdrop-filter: blur(14px);
+      border-bottom: 1px solid #e5e7eb;
+    }
+    .nav{
+      height: 76px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap: 18px;
+    }
+    .logo{
+      display:flex;
+      align-items:center;
+      gap: 10px;
+      font-family: "Space Grotesk";
+      letter-spacing: .18em;
+      text-transform: uppercase;
+      font-size: 14px;
+      white-space: nowrap;
+    }
+    .logo-badge{
+      width: 22px;height: 22px;
+      border-radius: 50%;
+      border: 1px solid rgba(0,0,0,.75);
+      display:flex;align-items:center;justify-content:center;
+      font-size: 14px; line-height: 1;
+    }
+    .menu{
+      display:flex;
+      align-items:center;
+      gap: 28px;
+      font-size: 14px;
+      color: var(--muted);
+    }
+    .menu a{
+      position:relative;
+      padding: 6px 0;
+      font-weight: 600;
+    }
+    .menu a:hover{color: #0f172a}
+    .menu a::after{
+      content:"";
+      position:absolute;
+      left:0; bottom:-6px;
+      height:2px; width:0;
+      background: rgba(15,23,42,.85);
+      border-radius: 999px;
+      transition: width .18s ease;
+    }
+    .menu a:hover::after{width:100%}
+    .pill{
+      border: 1px solid rgba(15,23,42,.30);
+      background:#fff;
+      border-radius:999px;
+      padding: 9px 14px;
+      font-size: 13px;
+      font-weight: 800;
+      cursor:pointer;
+      white-space: nowrap;
+      box-shadow: 0 10px 24px rgba(15,23,42,.06);
+      transition: transform .16s ease, box-shadow .16s ease;
+    }
+    .pill:hover{
+      transform: translateY(-1px);
+      box-shadow: 0 14px 34px rgba(15,23,42,.10);
+    }
+
+    main{padding: 56px 0 0;}
+
+    /* OCCTA brand card + services (right) */
+    .brand{
+      background: #f2ece3;
+      border-radius: var(--r-xl);
+      padding: 34px 36px;
+      border: 1px solid rgba(0,0,0,.06);
+      box-shadow: var(--shadow-soft);
+      position: relative;
+      overflow:hidden;
+    }
+    .brand::after{
+      content:"";
+      position:absolute;
+      right: -160px; top: -140px;
+      width: 360px; height: 360px;
+      border-radius: 50%;
+      background:
+        radial-gradient(circle at 30% 30%, rgba(255,255,255,.92), transparent 55%),
+        radial-gradient(circle at 70% 60%, rgba(37,99,235,.18), transparent 65%);
+      opacity: .9;
+      pointer-events:none;
+    }
+    .brand-grid{
+      display:flex;
+      align-items:flex-start;
+      justify-content:space-between;
+      gap: 26px;
+      position: relative;
+      z-index: 1;
+    }
+    .brand-name{
+      font-family:"Space Grotesk";
+      font-size: 72px;
+      letter-spacing: .18em;
+      line-height: 1;
+      color: #0b1220;
+    }
+    .services{
+      display:flex;
+      flex-direction:column;
+      gap: 8px;
+      align-items:flex-end;
+      padding-top: 6px;
+      min-width: 160px;
+    }
+    .services a{
+      font-size: 12px;
+      font-weight: 800;
+      color: rgba(15,23,42,.72);
+      letter-spacing: .02em;
+      padding: 6px 10px;
+      border-radius: 999px;
+      border: 1px solid rgba(15,23,42,.10);
+      background: rgba(255,255,255,.55);
+      transition: transform .16s ease, background .16s ease, border-color .16s ease;
+    }
+    .services a:hover{
+      transform: translateY(-1px);
+      background: rgba(255,255,255,.82);
+      border-color: rgba(15,23,42,.18);
+    }
+
+    /* Marquee bar */
+    .bar{
+      margin-top: 18px;
+      border-radius: var(--r-xl);
+      overflow:hidden;
+      border: 1px solid rgba(15,23,42,.16);
+      box-shadow: var(--shadow-card);
+      background: linear-gradient(90deg, var(--orange), var(--yellow));
+    }
+    .bar-inner{
+      display:flex;
+      align-items:center;
+      gap: 14px;
+      padding: 12px 14px;
+    }
+    .badge{
+      display:inline-flex;
+      align-items:center;
+      gap: 8px;
+      padding: 6px 10px;
+      border-radius: 999px;
+      background: rgba(255,255,255,.26);
+      border: 1px solid rgba(15,23,42,.20);
+      font-size: 12px;
+      font-weight: 900;
+      color: rgba(15,23,42,.88);
+      white-space: nowrap;
+    }
+    .bar-track{
+      flex: 1;
+      min-width: 0;
+      overflow:hidden;
+      position: relative;
+    }
+    .bar-mover{
+      display:flex;
+      width: max-content;
+      gap: 18px;
+      white-space: nowrap;
+      will-change: transform;
+      animation: marquee 18s linear infinite;
+      font-size: 13px;
+      font-weight: 800;
+      color: rgba(15,23,42,.92);
+    }
+    .sep{opacity:.8}
+    .bar-cta{
+      background: rgba(255,255,255,.94);
+      border: 1px solid rgba(15,23,42,.55);
+      color: rgba(15,23,42,.92);
+      border-radius: 999px;
+      padding: 9px 14px;
+      font-size: 13px;
+      font-weight: 900;
+      cursor:pointer;
+      white-space: nowrap;
+      transition: transform .16s ease, box-shadow .16s ease;
+      box-shadow: 0 10px 24px rgba(15,23,42,.10);
+    }
+    .bar-cta:hover{
+      transform: translateY(-1px);
+      box-shadow: 0 14px 34px rgba(15,23,42,.14);
+    }
+    @keyframes marquee{
+      from{transform: translateX(0)}
+      to{transform: translateX(-50%)}
+    }
+
+    /* Hero */
+    .hero-wrap{
+      margin-top: 22px;
+      border-radius: var(--r-xl);
+      overflow:hidden;
+      border: 1px solid rgba(15,23,42,.10);
+      box-shadow: var(--shadow-soft);
+      background:
+        radial-gradient(circle at 18% 28%,#38bdf8,transparent 56%),
+        radial-gradient(circle at 78% 22%,#a855f7,transparent 60%),
+        radial-gradient(circle at 22% 84%,#22c55e,transparent 56%),
+        radial-gradient(circle at 74% 78%,#f97316,transparent 58%),
+        linear-gradient(135deg,#020617,#0f172a);
+      position: relative;
+    }
+    .hero{
+      position: relative;
+      padding: 44px;
+      min-height: 520px;
+      display:grid;
+      grid-template-columns: 1.35fr .95fr;
+      gap: 26px;
+      align-items: center;
+    }
+    .hero-frame{
+      position:absolute;
+      inset: 22px 22px;
+      border-radius: 26px;
+      border: 1px solid rgba(148,163,184,.42);
+      background: radial-gradient(circle at 10% 0%, rgba(148,163,184,.28), transparent 55%);
+      box-shadow: 0 40px 90px rgba(15,23,42,.55);
+      opacity: .92;
+      pointer-events:none;
+    }
+    .hero-left, .hero-right{position:relative; z-index:2;}
+    .hero h1{
+      font-family:"Space Grotesk";
+      font-size: 44px;
+      line-height: 1.10;
+      letter-spacing: -.01em;
+      color: #f8fafc;
+      margin-bottom: 12px;
+      text-shadow: 0 16px 36px rgba(0,0,0,.35);
+    }
+    .hero p{
+      font-size: 14px;
+      color: rgba(226,232,240,.92);
+      max-width: 66ch;
+    }
+
+    /* Featured plan card (clean, no checkmarks) */
+    .plan{
+      margin-top: 16px;
+      max-width: 560px;
+      border-radius: 22px;
+      padding: 16px;
+      background: rgba(255,255,255,.14);
+      border: 1px solid rgba(255,255,255,.22);
+      backdrop-filter: blur(14px);
+      box-shadow: 0 26px 70px rgba(0,0,0,.22);
+    }
+    .plan-top{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap: 12px;
+      margin-bottom: 10px;
+    }
+    .plan-top .mini{
+      font-size: 12px;
+      font-weight: 900;
+      color: rgba(248,250,252,.96);
+      padding: 6px 10px;
+      border-radius: 999px;
+      background: rgba(255,255,255,.16);
+      border: 1px solid rgba(255,255,255,.18);
+      white-space: nowrap;
+    }
+    .plan-top .type{
+      font-size: 12px;
+      font-weight: 900;
+      color: rgba(226,232,240,.92);
+      letter-spacing: .02em;
+      white-space: nowrap;
+    }
+    .price{
+      display:flex;
+      align-items:flex-end;
+      gap: 8px;
+      line-height: 1;
+      margin-bottom: 10px;
+    }
+    .price .currency{
+      font-family:"Space Grotesk";
+      font-size: 18px;
+      color: rgba(248,250,252,.95);
+    }
+    .price .amount{
+      font-family:"Space Grotesk";
+      font-size: 46px;
+      color: #fff;
+      letter-spacing: .01em;
+      text-shadow: 0 14px 32px rgba(0,0,0,.25);
+    }
+    .price .per{
+      font-size: 13px;
+      font-weight: 800;
+      color: rgba(226,232,240,.88);
+      padding-bottom: 6px;
+    }
+    .plan-copy{
+      font-size: 13px;
+      color: rgba(226,232,240,.92);
+      max-width: 72ch;
+    }
+    .plan-meta{
+      margin-top: 12px;
+      padding-top: 12px;
+      border-top: 1px solid rgba(255,255,255,.14);
+      display:flex;
+      flex-wrap:wrap;
+      gap: 10px 14px;
+      color: rgba(226,232,240,.92);
+      font-size: 12px;
+      font-weight: 800;
+    }
+    .meta-pill{
+      padding: 6px 10px;
+      border-radius: 999px;
+      background: rgba(2,6,23,.24);
+      border: 1px solid rgba(255,255,255,.12);
+      white-space: nowrap;
+    }
+
+    .hero-actions{
+      margin-top: 16px;
+      display:flex;
+      align-items:center;
+      gap: 14px;
+      flex-wrap:wrap;
+    }
+    .cta{
+      display:inline-flex;
+      align-items:center;
+      gap: 10px;
+      border: none;
+      background: var(--blue);
+      color:#fff;
+      border-radius: 999px;
+      padding: 12px 18px;
+      font-size: 14px;
+      font-weight: 900;
+      cursor:pointer;
+      box-shadow: 0 18px 44px rgba(37,99,235,.34);
+      transition: transform .16s ease, box-shadow .16s ease;
+      white-space: nowrap;
+    }
+    .cta:hover{
+      transform: translateY(-2px);
+      box-shadow: 0 24px 58px rgba(37,99,235,.44);
+    }
+    .link{
+      font-size: 14px;
+      font-weight: 800;
+      color: rgba(226,232,240,.90);
+      position:relative;
+      padding: 8px 0;
+    }
+    .link::after{
+      content:"";
+      position:absolute;
+      left:0; bottom: 2px;
+      width:0; height:2px;
+      background: rgba(226,232,240,.75);
+      border-radius: 999px;
+      transition: width .16s ease;
+    }
+    .link:hover::after{width:100%}
+
+    /* Availability box (right) */
+    .glass{
+      border-radius: 22px;
+      padding: 16px;
+      background: rgba(255,255,255,.14);
+      border: 1px solid rgba(255,255,255,.22);
+      backdrop-filter: blur(14px);
+      box-shadow: 0 26px 70px rgba(0,0,0,.25);
+      color:#fff;
+    }
+    .glass-head{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap: 10px;
+      margin-bottom: 10px;
+    }
+    .glass h3{
+      font-family:"Space Grotesk";
+      font-size: 16px;
+      letter-spacing: .01em;
+    }
+    .glass small{
+      font-size: 12px;
+      color: rgba(226,232,240,.88);
+      font-weight: 700;
+      opacity: .95;
+      white-space:nowrap;
+    }
+    .form{
+      display:flex;
+      gap: 10px;
+      margin-top: 10px;
+    }
+    .input{
+      flex:1;
+      height: 44px;
+      border-radius: 14px;
+      border: 1px solid rgba(255,255,255,.22);
+      background: rgba(2,6,23,.35);
+      color:#fff;
+      padding: 0 12px;
+      outline:none;
+      font-size: 14px;
+    }
+    .input::placeholder{color: rgba(226,232,240,.70)}
+    .btn{
+      height: 44px;
+      border-radius: 14px;
+      border: none;
+      padding: 0 14px;
+      font-size: 14px;
+      font-weight: 900;
+      background: rgba(255,255,255,.94);
+      color: #0f172a;
+      cursor:pointer;
+      transition: transform .16s ease, box-shadow .16s ease;
+      white-space: nowrap;
+    }
+    .btn:hover{
+      transform: translateY(-1px);
+      box-shadow: 0 18px 44px rgba(0,0,0,.22);
+    }
+    .hint{
+      margin-top: 10px;
+      font-size: 12px;
+      color: rgba(226,232,240,.90);
+      line-height: 1.45;
+      opacity: .95;
+    }
+    .result{
+      margin-top: 12px;
+      border-radius: 16px;
+      padding: 10px 12px;
+      border: 1px solid rgba(255,255,255,.18);
+      background: rgba(2,6,23,.28);
+      font-size: 12px;
+      color: rgba(226,232,240,.95);
+      display:none;
+    }
+    .result strong{color:#fff}
+    .result.show{display:block}
+
+    /* Sections */
+    .section{
+      padding: 88px 0 0;
+    }
+    .section-head{
+      display:flex;
+      align-items:flex-end;
+      justify-content:space-between;
+      gap: 18px;
+      margin-bottom: 22px;
+      flex-wrap:wrap;
+    }
+    .kicker{
+      display:flex;
+      align-items:center;
+      gap: 10px;
+      font-size: 12px;
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: .12em;
+      color: rgba(15,23,42,.68);
+    }
+    .k-dot{width:8px;height:8px;border-radius:999px;background: rgba(15,23,42,.22);}
+    .h2{
+      font-family:"Space Grotesk";
+      font-size: 30px;
+      line-height: 1.15;
+      margin-top: 8px;
+    }
+    .sub{
+      margin-top: 8px;
+      color: var(--muted);
+      font-size: 14px;
+      max-width: 76ch;
+    }
+
+    /* Tabs section */
+    .tabs{
+      margin-top: 16px;
+      display:flex;
+      gap:10px;
+      flex-wrap:wrap;
+      background: rgba(255,255,255,.65);
+      border: 1px solid rgba(15,23,42,.10);
+      border-radius: 999px;
+      padding: 6px;
+      box-shadow: 0 12px 32px rgba(15,23,42,.06);
+    }
+    .tab{
+      border: 0;
+      background: transparent;
+      cursor:pointer;
+      padding: 10px 14px;
+      border-radius: 999px;
+      font-size: 14px;
+      font-weight: 900;
+      color: rgba(15,23,42,.70);
+      transition: background .16s ease, color .16s ease, transform .16s ease;
+    }
+    .tab:hover{transform: translateY(-1px);}
+    .tab.is-active{
+      background: #0f172a;
+      color: #fff;
+    }
+
+    .tab-panels{margin-top: 16px;}
+    .panel{display:none;}
+    .panel.is-active{display:block;}
+
+    .panel-grid{
+      display:grid;
+      grid-template-columns: 1fr 1.6fr;
+      gap: 18px;
+      align-items: start;
+    }
+
+    .panel-card{
+      background:#fff;
+      border:1px solid rgba(15,23,42,.06);
+      border-radius: 20px;
+      padding: 18px;
+      box-shadow: 0 18px 50px rgba(15,23,42,.08);
+    }
+    .panel-title{
+      font-family:"Space Grotesk";
+      font-size: 18px;
+      font-weight: 700;
+    }
+    .panel-desc{
+      margin-top: 8px;
+      color: rgba(15,23,42,.70);
+      font-size: 13.5px;
+      max-width: 60ch;
+    }
+    .panel-pills{
+      margin-top: 14px;
+      display:flex;
+      flex-wrap:wrap;
+      gap: 10px;
+    }
+    .pill2{
+      padding: 7px 10px;
+      border-radius: 999px;
+      background: rgba(15,23,42,.04);
+      border: 1px solid rgba(15,23,42,.10);
+      font-size: 12px;
+      font-weight: 900;
+      color: rgba(15,23,42,.70);
+    }
+    .panel-note{
+      margin-top: 14px;
+      font-size: 12px;
+      color: rgba(15,23,42,.55);
+      border-top: 1px dashed rgba(15,23,42,.14);
+      padding-top: 12px;
+    }
+
+    .plan-grid{
+      display:grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 14px;
+    }
+    .plan2{
+      background:#fff;
+      border-radius: 20px;
+      border: 1px solid rgba(15,23,42,.06);
+      box-shadow: 0 18px 50px rgba(15,23,42,.08);
+      padding: 16px;
+      display:flex;
+      flex-direction:column;
+      min-height: 250px;
+    }
+    .plan2-top{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:10px;
+    }
+    .tag2{
+      font-size: 11px;
+      font-weight: 900;
+      padding: 6px 10px;
+      border-radius: 999px;
+      background: rgba(249,115,22,.16);
+      border: 1px solid rgba(249,115,22,.28);
+      color: rgba(15,23,42,.85);
+      white-space:nowrap;
+    }
+    .tag2.soft{
+      background: rgba(37,99,235,.10);
+      border-color: rgba(37,99,235,.22);
+    }
+    .tag2.outline{
+      background: transparent;
+      border-color: rgba(15,23,42,.18);
+    }
+    .plan2-name{
+      font-weight: 900;
+      font-size: 14px;
+      color: rgba(15,23,42,.92);
+    }
+    .plan2-price{
+      margin-top: 12px;
+      display:flex;
+      align-items:flex-end;
+      gap: 6px;
+      line-height: 1;
+    }
+    .plan2-price span{font-family:"Space Grotesk"; font-size: 16px; color: rgba(15,23,42,.85);}
+    .plan2-price b{font-family:"Space Grotesk"; font-size: 34px; letter-spacing:.01em;}
+    .plan2-price em{font-style:normal; font-weight:800; font-size: 12px; color: rgba(15,23,42,.55); padding-bottom: 4px;}
+
+    .plan2-meta{
+      margin-top: 12px;
+      display:grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+      padding-top: 12px;
+      border-top: 1px solid rgba(15,23,42,.08);
+    }
+    .plan2-meta small{
+      display:block;
+      font-size: 11px;
+      font-weight: 900;
+      letter-spacing:.08em;
+      text-transform:uppercase;
+      color: rgba(15,23,42,.50);
+    }
+    .plan2-meta strong{
+      display:block;
+      font-size: 12.5px;
+      font-weight: 900;
+      color: rgba(15,23,42,.85);
+      margin-top: 4px;
+    }
+    .plan2-cta{
+      margin-top: 14px;
+      border: none;
+      border-radius: 999px;
+      padding: 12px 14px;
+      font-size: 13.5px;
+      font-weight: 900;
+      cursor:pointer;
+      background: #0f172a;
+      color:#fff;
+      transition: transform .16s ease, box-shadow .16s ease;
+      box-shadow: 0 18px 46px rgba(15,23,42,.20);
+    }
+    .plan2-cta:hover{
+      transform: translateY(-1px);
+      box-shadow: 0 24px 60px rgba(15,23,42,.26);
+    }
+    .plan2-foot{
+      margin-top: 10px;
+      color: rgba(15,23,42,.55);
+      font-size: 12px;
+    }
+
+    /* Why cards */
+    .cards{
+      display:grid;
+      grid-template-columns: repeat(12, 1fr);
+      gap: 18px;
+    }
+    .card{
+      grid-column: span 6;
+      background:#fff;
+      border-radius: var(--r-lg);
+      border: 1px solid rgba(15,23,42,.06);
+      box-shadow: var(--shadow-card);
+      padding: 18px;
+    }
+    .card-top{
+      display:flex;
+      align-items:flex-start;
+      gap: 12px;
+      margin-bottom: 10px;
+    }
+    .icon{
+      width: 40px; height: 40px;
+      border-radius: 14px;
+      display:flex; align-items:center; justify-content:center;
+      background: rgba(37,99,235,.08);
+      border: 1px solid rgba(37,99,235,.18);
+      font-size: 18px;
+    }
+    .card h4{font-size: 15px; font-weight: 900; line-height:1.25; margin-top: 2px;}
+    .card p{margin-top: 6px; font-size: 13.5px; color: rgba(15,23,42,.74);}
+
+    /* Footer */
+    footer{
+      margin-top: 86px;
+      background:#fff;
+      border-top: 1px solid #e5e7eb;
+    }
+    .footer{
+      padding: 18px 0;
+      font-size: 12px;
+      color:#6b7280;
+      display:flex;
+      justify-content:space-between;
+      gap: 16px;
+      flex-wrap:wrap;
+    }
+
+    /* Responsive */
+    @media (max-width: 980px){
+      .menu{display:none}
+      .brand-grid{flex-direction:column; align-items:flex-start}
+      .brand-name{font-size: 52px}
+      .services{align-items:flex-start; flex-direction:row; flex-wrap:wrap; min-width:0; padding-top: 2px}
+      .hero{grid-template-columns: 1fr; padding: 22px; min-height: unset}
+      .hero-frame{inset: 16px 16px}
+      .plan{max-width: none}
+
+      .panel-grid{grid-template-columns: 1fr;}
+      .plan-grid{grid-template-columns: 1fr;}
+      .cards .card{grid-column: span 12;}
+    }
+
+    /* Keep marquee moving unless user explicitly requests reduced motion */
+    @media (prefers-reduced-motion: reduce){
+      .bar-mover{animation: none;}
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <div class="container nav">
+      <div class="logo"><span class="logo-badge">＋</span>OCCTA</div>
+      <nav class="menu">
+        <a href="#top">Home</a>
+        <a href="#broadband">Broadband</a>
+        <a href="#sim">SIM Plans</a>
+        <a href="#landline">Landline</a>
+        <a href="#why">Why Occta</a>
+        <a href="#contact">Contact</a>
+      </nav>
+      <button class="pill" type="button" onclick="document.getElementById('planTabs').scrollIntoView({behavior:'smooth'})">Get started</button>
+    </div>
+  </header>
+
+  <main id="top">
+    <div class="container">
+
+      <!-- Brand + services -->
+      <section class="brand" aria-label="Occta">
+        <div class="brand-grid">
+          <div class="brand-name">OCCTA.</div>
+          <div class="services" aria-label="Services">
+            <a href="#broadband">Broadband</a>
+            <a href="#sim">SIM Plans</a>
+            <a href="#landline">Landline</a>
+          </div>
+        </div>
+      </section>
+
+      <!-- Moving bar -->
+      <section class="bar" aria-label="Announcement">
+        <div class="bar-inner">
+          <span class="badge">New</span>
+
+          <div class="bar-track" aria-hidden="true">
+            <div class="bar-mover" id="marquee">
+              <span>Full Fibre from £19.99/mo</span>
+              <span class="sep">•</span>
+              <span>Clear pricing, no surprises</span>
+              <span class="sep">•</span>
+              <span>Broadband</span>
+              <span class="sep">•</span>
+              <span>SIM</span>
+              <span class="sep">•</span>
+              <span>Landline</span>
+              <span class="sep">•</span>
+              <span>Support that actually helps</span>
+              <span class="sep">•</span>
+              <span>Cancel online, no hassle</span>
+              <span class="sep">•</span>
+              <span>Full Fibre from £19.99/mo</span>
+              <span class="sep">•</span>
+              <span>Clear pricing, no surprises</span>
+              <span class="sep">•</span>
+              <span>Broadband</span>
+              <span class="sep">•</span>
+              <span>SIM</span>
+              <span class="sep">•</span>
+              <span>Landline</span>
+              <span class="sep">•</span>
+              <span>Support that actually helps</span>
+              <span class="sep">•</span>
+              <span>Cancel online, no hassle</span>
+            </div>
+          </div>
+
+          <button class="bar-cta" type="button" onclick="document.getElementById('planTabs').scrollIntoView({behavior:'smooth'})">
+            View plans ↗
+          </button>
+        </div>
+      </section>
+
+      <!-- Hero -->
+      <section class="hero-wrap" aria-label="Hero">
+        <div class="hero-frame"></div>
+
+        <div class="hero">
+          <!-- Left -->
+          <div class="hero-left">
+            <h1>Internet, without the British drama.</h1>
+            <p>
+              Broadband, SIM plans and landlines with clear pricing, honest support, and no surprises.
+              The boring stuff done properly — so your connection isn’t a daily soap opera.
+            </p>
+
+            <div class="plan" aria-label="Featured plan">
+              <div class="plan-top">
+                <span class="mini">Best value</span>
+                <span class="type">Full Fibre</span>
+              </div>
+
+              <div class="price">
+                <span class="currency">£</span>
+                <span class="amount">19.99</span>
+                <span class="per">/mo</span>
+              </div>
+
+              <div class="plan-copy">
+                Full Fibre from <b>£19.99/month</b>. Availability and speeds vary by location. T&amp;Cs apply.
+              </div>
+
+              <div class="plan-meta" aria-label="Plan highlights">
+                <span class="meta-pill">No surprise price hikes</span>
+                <span class="meta-pill">Cancel online</span>
+                <span class="meta-pill">Router included</span>
+                <span class="meta-pill">UK support</span>
+              </div>
+            </div>
+
+            <div class="hero-actions">
+              <button class="cta" type="button" onclick="document.getElementById('postcode').focus()">🚀 Let’s get you online</button>
+              <a class="link" href="#planTabs">View plans →</a>
+            </div>
+          </div>
+
+          <!-- Right -->
+          <div class="hero-right">
+            <div class="glass" aria-label="Availability checker">
+              <div class="glass-head">
+                <h3>Check availability</h3>
+                <small>Preview</small>
+              </div>
+
+              <form class="form" id="postcodeForm">
+                <input class="input" id="postcode" name="postcode" type="text" autocomplete="postal-code"
+                       placeholder="Enter your UK postcode (e.g. SW1A 1AA)" aria-label="Enter your UK postcode">
+                <button class="btn" type="submit">Check</button>
+              </form>
+
+              <div class="hint">
+                We’ll show address-level availability here once integrations are complete.
+                For now, this checks the postcode format and confirms we can serve your area.
+              </div>
+
+              <div class="result" id="postcodeResult" role="status" aria-live="polite"></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Tabs + Plans -->
+      <section class="section" id="planTabs">
+        <div class="section-head">
+          <div>
+            <div class="kicker"><span class="k-dot"></span> PICK A SERVICE</div>
+            <div class="h2">Choose what you’re shopping for.</div>
+            <div class="sub">
+              Broadband, SIM or Bundles — same Occta promise: clear pricing, no faff, and support that actually helps.
+            </div>
+          </div>
+        </div>
+
+        <!-- Tabs -->
+        <div class="tabs" role="tablist" aria-label="Service tabs">
+          <button class="tab is-active" role="tab" aria-selected="true" aria-controls="tab-broadband" id="tabBtn-broadband" data-tab="broadband">
+            Broadband
+          </button>
+          <button class="tab" role="tab" aria-selected="false" aria-controls="tab-sim" id="tabBtn-sim" data-tab="sim">
+            SIM Plans
+          </button>
+          <button class="tab" role="tab" aria-selected="false" aria-controls="tab-bundles" id="tabBtn-bundles" data-tab="bundles">
+            Bundles
+          </button>
+        </div>
+
+        <!-- Panels -->
+        <div class="tab-panels">
+          <!-- Broadband -->
+          <div class="panel is-active" role="tabpanel" id="tab-broadband" aria-labelledby="tabBtn-broadband">
+            <div class="panel-grid">
+              <div class="panel-left">
+                <div class="panel-card">
+                  <div class="panel-title">Broadband — what you’ll get</div>
+                  <div class="panel-desc">Stable speeds, clean setup, and pricing you can understand without a magnifying glass.</div>
+
+                  <div class="panel-pills">
+                    <span class="pill2">Full Fibre options</span>
+                    <span class="pill2">Router included*</span>
+                    <span class="pill2">Clear monthly cost</span>
+                    <span class="pill2">Easy switching help</span>
+                  </div>
+
+                  <div class="panel-note">
+                    *Availability varies by postcode. Final speed shown after availability check.
+                  </div>
+                </div>
+              </div>
+
+              <div class="panel-right">
+                <div class="plan-grid">
+                  <article class="plan2">
+                    <div class="plan2-top">
+                      <span class="tag2">Popular</span>
+                      <span class="plan2-name">Full Fibre Starter</span>
+                    </div>
+                    <div class="plan2-price"><span>£</span><b>19.99</b><em>/mo</em></div>
+                    <div class="plan2-meta">
+                      <div><small>Speed</small><strong>Up to 150 Mbps</strong></div>
+                      <div><small>Contract</small><strong>12 months</strong></div>
+                      <div><small>Setup</small><strong>£0*</strong></div>
+                      <div><small>Router</small><strong>Included*</strong></div>
+                    </div>
+                    <button class="plan2-cta" type="button" onclick="scrollToChecker()">Get me online →</button>
+                    <div class="plan2-foot">Good for streaming + work calls.</div>
+                  </article>
+
+                  <article class="plan2">
+                    <div class="plan2-top">
+                      <span class="tag2 soft">Best value</span>
+                      <span class="plan2-name">Full Fibre Plus</span>
+                    </div>
+                    <div class="plan2-price"><span>£</span><b>24.99</b><em>/mo</em></div>
+                    <div class="plan2-meta">
+                      <div><small>Speed</small><strong>Up to 300 Mbps</strong></div>
+                      <div><small>Contract</small><strong>12 months</strong></div>
+                      <div><small>Setup</small><strong>£0*</strong></div>
+                      <div><small>Router</small><strong>Included*</strong></div>
+                    </div>
+                    <button class="plan2-cta" type="button" onclick="scrollToChecker()">Sort my Wi-Fi, mate →</button>
+                    <div class="plan2-foot">Ideal for families + multiple devices.</div>
+                  </article>
+
+                  <article class="plan2">
+                    <div class="plan2-top">
+                      <span class="tag2 outline">Fast</span>
+                      <span class="plan2-name">Full Fibre Max</span>
+                    </div>
+                    <div class="plan2-price"><span>£</span><b>29.99</b><em>/mo</em></div>
+                    <div class="plan2-meta">
+                      <div><small>Speed</small><strong>Up to 500 Mbps</strong></div>
+                      <div><small>Contract</small><strong>12 months</strong></div>
+                      <div><small>Setup</small><strong>£0*</strong></div>
+                      <div><small>Router</small><strong>Included*</strong></div>
+                    </div>
+                    <button class="plan2-cta" type="button" onclick="scrollToChecker()">I want the fast one →</button>
+                    <div class="plan2-foot">For heavy streaming + gaming.</div>
+                  </article>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- SIM -->
+          <div class="panel" role="tabpanel" id="tab-sim" aria-labelledby="tabBtn-sim">
+            <div class="panel-grid">
+              <div class="panel-left">
+                <div class="panel-card">
+                  <div class="panel-title">SIM Plans — what you’ll get</div>
+                  <div class="panel-desc">Simple tiers, no weird surprises, and a plan that fits real life.</div>
+
+                  <div class="panel-pills">
+                    <span class="pill2">Keep your number</span>
+                    <span class="pill2">No hidden add-ons</span>
+                    <span class="pill2">Monthly flexibility*</span>
+                    <span class="pill2">UK support</span>
+                  </div>
+
+                  <div class="panel-note">
+                    *Final terms depend on your selected plan. Coverage varies by area.
+                  </div>
+                </div>
+              </div>
+
+              <div class="panel-right">
+                <div class="plan-grid">
+                  <article class="plan2">
+                    <div class="plan2-top">
+                      <span class="tag2">Popular</span>
+                      <span class="plan2-name">Lite Data</span>
+                    </div>
+                    <div class="plan2-price"><span>£</span><b>8.00</b><em>/mo</em></div>
+                    <div class="plan2-meta">
+                      <div><small>Data</small><strong>10 GB</strong></div>
+                      <div><small>Minutes</small><strong>Unlimited</strong></div>
+                      <div><small>Texts</small><strong>Unlimited</strong></div>
+                      <div><small>Roaming</small><strong>UK only*</strong></div>
+                    </div>
+                    <button class="plan2-cta" type="button" onclick="goToContact()">Start my SIM →</button>
+                    <div class="plan2-foot">For light browsing + WhatsApp.</div>
+                  </article>
+
+                  <article class="plan2">
+                    <div class="plan2-top">
+                      <span class="tag2 soft">Best value</span>
+                      <span class="plan2-name">Everyday</span>
+                    </div>
+                    <div class="plan2-price"><span>£</span><b>12.00</b><em>/mo</em></div>
+                    <div class="plan2-meta">
+                      <div><small>Data</small><strong>50 GB</strong></div>
+                      <div><small>Minutes</small><strong>Unlimited</strong></div>
+                      <div><small>Texts</small><strong>Unlimited</strong></div>
+                      <div><small>Roaming</small><strong>UK only*</strong></div>
+                    </div>
+                    <button class="plan2-cta" type="button" onclick="goToContact()">That’ll do nicely →</button>
+                    <div class="plan2-foot">For daily streaming + socials.</div>
+                  </article>
+
+                  <article class="plan2">
+                    <div class="plan2-top">
+                      <span class="tag2 outline">Big data</span>
+                      <span class="plan2-name">Unlimited</span>
+                    </div>
+                    <div class="plan2-price"><span>£</span><b>18.00</b><em>/mo</em></div>
+                    <div class="plan2-meta">
+                      <div><small>Data</small><strong>Unlimited</strong></div>
+                      <div><small>Minutes</small><strong>Unlimited</strong></div>
+                      <div><small>Texts</small><strong>Unlimited</strong></div>
+                      <div><small>Fair use</small><strong>Applies</strong></div>
+                    </div>
+                    <button class="plan2-cta" type="button" onclick="goToContact()">Give me unlimited →</button>
+                    <div class="plan2-foot">For power users + hotspot.</div>
+                  </article>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Bundles -->
+          <div class="panel" role="tabpanel" id="tab-bundles" aria-labelledby="tabBtn-bundles">
+            <div class="panel-grid">
+              <div class="panel-left">
+                <div class="panel-card">
+                  <div class="panel-title">Bundles — what you’ll get</div>
+                  <div class="panel-desc">Combine services to keep it cheaper and simpler — one place to manage everything.</div>
+
+                  <div class="panel-pills">
+                    <span class="pill2">Broadband + SIM</span>
+                    <span class="pill2">Broadband + Landline</span>
+                    <span class="pill2">Single monthly bill</span>
+                    <span class="pill2">Priority support</span>
+                  </div>
+
+                  <div class="panel-note">
+                    Bundles depend on availability at your address.
+                  </div>
+                </div>
+              </div>
+
+              <div class="panel-right">
+                <div class="plan-grid">
+                  <article class="plan2">
+                    <div class="plan2-top">
+                      <span class="tag2">Popular</span>
+                      <span class="plan2-name">Fibre + SIM</span>
+                    </div>
+                    <div class="plan2-price"><span>£</span><b>29.99</b><em>/mo</em></div>
+                    <div class="plan2-meta">
+                      <div><small>Broadband</small><strong>Up to 150 Mbps</strong></div>
+                      <div><small>SIM</small><strong>50 GB</strong></div>
+                      <div><small>Bill</small><strong>Single</strong></div>
+                      <div><small>Support</small><strong>Priority</strong></div>
+                    </div>
+                    <button class="plan2-cta" type="button" onclick="scrollToChecker()">Bundle me up →</button>
+                    <div class="plan2-foot">Great value for most homes.</div>
+                  </article>
+
+                  <article class="plan2">
+                    <div class="plan2-top">
+                      <span class="tag2 soft">Best value</span>
+                      <span class="plan2-name">Fibre + Landline</span>
+                    </div>
+                    <div class="plan2-price"><span>£</span><b>27.99</b><em>/mo</em></div>
+                    <div class="plan2-meta">
+                      <div><small>Broadband</small><strong>Up to 150 Mbps</strong></div>
+                      <div><small>Landline</small><strong>Included*</strong></div>
+                      <div><small>Number</small><strong>Keep it</strong></div>
+                      <div><small>Bill</small><strong>Single</strong></div>
+                    </div>
+                    <button class="plan2-cta" type="button" onclick="scrollToChecker()">Keep my number →</button>
+                    <div class="plan2-foot">For households that still use a landline.</div>
+                  </article>
+
+                  <article class="plan2">
+                    <div class="plan2-top">
+                      <span class="tag2 outline">All-in</span>
+                      <span class="plan2-name">Fibre + SIM + Landline</span>
+                    </div>
+                    <div class="plan2-price"><span>£</span><b>34.99</b><em>/mo</em></div>
+                    <div class="plan2-meta">
+                      <div><small>Broadband</small><strong>Up to 300 Mbps</strong></div>
+                      <div><small>SIM</small><strong>Unlimited</strong></div>
+                      <div><small>Landline</small><strong>Included*</strong></div>
+                      <div><small>Support</small><strong>Priority</strong></div>
+                    </div>
+                    <button class="plan2-cta" type="button" onclick="scrollToChecker()">All sorted →</button>
+                    <div class="plan2-foot">One bill. One place. Less hassle.</div>
+                  </article>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- Service anchors (for menu + brand links) -->
+      <section class="section" id="broadband">
+        <div class="section-head">
+          <div>
+            <div class="kicker"><span class="k-dot"></span> BROADBAND</div>
+            <div class="h2">Broadband that just gets on with it.</div>
+            <div class="sub">Clear tiers, honest expectations, and upgrades when you actually need them.</div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="sim">
+        <div class="section-head">
+          <div>
+            <div class="kicker"><span class="k-dot"></span> SIM PLANS</div>
+            <div class="h2">SIM plans with no silly surprises.</div>
+            <div class="sub">Simple data tiers, clear billing, and a plan that fits normal life.</div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="landline">
+        <div class="section-head">
+          <div>
+            <div class="kicker"><span class="k-dot"></span> LANDLINE</div>
+            <div class="h2">Landlines, handled properly.</div>
+            <div class="sub">Keep your number. Clear steps. No accidental “upgrades”.</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Why -->
+      <section class="section" id="why">
+        <div class="section-head">
+          <div>
+            <div class="kicker"><span class="k-dot"></span> TRUST FIRST</div>
+            <div class="h2">No tricks. No small-print gymnastics.</div>
+            <div class="sub">
+              Occta is built around the reasons people leave their provider: surprise changes, hard cancellations,
+              unclear landline handling, and silence during outages.
+            </div>
+          </div>
+        </div>
+
+        <div class="cards">
+          <div class="card">
+            <div class="card-top">
+              <div class="icon">💷</div>
+              <div>
+                <h4>Clear monthly pricing</h4>
+                <p>Simple, readable pricing. If it changes, it’s shown upfront — in £/month.</p>
+              </div>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-top">
+              <div class="icon">🧾</div>
+              <div>
+                <h4>Cancel online</h4>
+                <p>End your service without call-centre battles. Fast and friction-free.</p>
+              </div>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-top">
+              <div class="icon">☎️</div>
+              <div>
+                <h4>Landlines handled properly</h4>
+                <p>Keep your number with clear steps and straightforward support.</p>
+              </div>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-top">
+              <div class="icon">📣</div>
+              <div>
+                <h4>Honest service updates</h4>
+                <p>If there’s an outage, we tell you — with real timelines and clarity.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Contact -->
+      <section class="section" id="contact">
+        <div class="section-head">
+          <div>
+            <div class="kicker"><span class="k-dot"></span> CONTACT</div>
+            <div class="h2">Need a hand?</div>
+            <div class="sub">Registered office: 22 Pavilion View, Huddersfield, HD3 3WU</div>
+          </div>
+        </div>
+      </section>
+
+    </div>
+  </main>
+
+  <footer>
+    <div class="container footer">
+      <div>© <span id="year"></span> Occta Limited</div>
+      <div>22 Pavilion View, Huddersfield, HD3 3WU</div>
+    </div>
+  </footer>
+
+  <script>
+    // year
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+    // Buttons used by plans
+    function scrollToChecker(){
+      const el = document.getElementById("postcode");
+      if(el){ el.focus(); el.scrollIntoView({behavior:"smooth", block:"center"}); }
+    }
+    function goToContact(){
+      const el = document.getElementById("contact");
+      if(el){ el.scrollIntoView({behavior:"smooth"}); }
+    }
+
+    // postcode checker (demo validation only)
+    const form = document.getElementById("postcodeForm");
+    const input = document.getElementById("postcode");
+    const out = document.getElementById("postcodeResult");
+
+    // UK postcode basic pattern (compact form)
+    const UK_POSTCODE = /^([A-Z]{1,2}\d[A-Z\d]?|\d[A-Z]{2})\d[A-Z]{2}$/;
+
+    function normalisePostcode(v){
+      return (v || "").trim().toUpperCase().replace(/\s+/g, " ");
+    }
+
+    form.addEventListener("submit", (e) => {
+      e.preventDefault();
+      const pc = normalisePostcode(input.value);
+      const compact = pc.replace(" ", "");
+
+      out.classList.add("show");
+
+      if(!pc){
+        out.innerHTML = "<strong>Please enter a postcode.</strong> Example: SW1A 1AA";
+        input.focus();
+        return;
+      }
+
+      if(!UK_POSTCODE.test(compact)){
+        out.innerHTML = "<strong>That doesn’t look like a UK postcode.</strong> Try SW1A 1AA.";
+        input.focus();
+        return;
+      }
+
+      out.innerHTML = "<strong>Looks good.</strong> We can confirm Full Fibre options for <strong>" + pc + "</strong> here (preview).";
+    });
+
+    // marquee: make sure it always scrolls smoothly
+    (function setupMarquee(){
+      const marquee = document.getElementById("marquee");
+      if(!marquee) return;
+
+      // If we've already wrapped it once, do nothing.
+      if (marquee.parentElement && marquee.parentElement.dataset && marquee.parentElement.dataset.wrapped === "1") return;
+
+      const track = marquee.parentElement;
+      if(!track) return;
+
+      // Clone the content once
+      const clone = marquee.cloneNode(true);
+      clone.id = "";
+
+      const wrapper = document.createElement("div");
+      wrapper.className = "bar-mover";
+      wrapper.style.animation = getComputedStyle(marquee).animation;
+      wrapper.style.gap = getComputedStyle(marquee).gap || "18px";
+
+      wrapper.appendChild(marquee);
+      wrapper.appendChild(clone);
+
+      track.innerHTML = "";
+      track.appendChild(wrapper);
+      track.dataset.wrapped = "1";
+
+      if (window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+        wrapper.style.animation = "none";
+      }
+    })();
+
+    // Tabs
+    const tabs = document.querySelectorAll(".tab");
+    const panels = document.querySelectorAll(".panel");
+
+    tabs.forEach(btn=>{
+      btn.addEventListener("click", ()=>{
+        const key = btn.dataset.tab;
+
+        tabs.forEach(t=>{
+          t.classList.remove("is-active");
+          t.setAttribute("aria-selected","false");
+        });
+        panels.forEach(p=>p.classList.remove("is-active"));
+
+        btn.classList.add("is-active");
+        btn.setAttribute("aria-selected","true");
+        const panel = document.getElementById("tab-" + key);
+        if(panel) panel.classList.add("is-active");
+      });
+    });
+  </script>
+</body>
+</html>
 
