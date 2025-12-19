@@ -119,7 +119,6 @@
       box-shadow: 0 14px 34px rgba(15,23,42,.10);
     }
 
-    /* Top spacing */
     main{padding: 56px 0 0;}
 
     /* OCCTA brand card + services (right) */
@@ -549,6 +548,190 @@
       font-size: 14px;
       max-width: 76ch;
     }
+
+    /* Tabs section */
+    .tabs{
+      margin-top: 16px;
+      display:flex;
+      gap:10px;
+      flex-wrap:wrap;
+      background: rgba(255,255,255,.65);
+      border: 1px solid rgba(15,23,42,.10);
+      border-radius: 999px;
+      padding: 6px;
+      box-shadow: 0 12px 32px rgba(15,23,42,.06);
+    }
+    .tab{
+      border: 0;
+      background: transparent;
+      cursor:pointer;
+      padding: 10px 14px;
+      border-radius: 999px;
+      font-size: 14px;
+      font-weight: 900;
+      color: rgba(15,23,42,.70);
+      transition: background .16s ease, color .16s ease, transform .16s ease;
+    }
+    .tab:hover{transform: translateY(-1px);}
+    .tab.is-active{
+      background: #0f172a;
+      color: #fff;
+    }
+
+    .tab-panels{margin-top: 16px;}
+    .panel{display:none;}
+    .panel.is-active{display:block;}
+
+    .panel-grid{
+      display:grid;
+      grid-template-columns: 1fr 1.6fr;
+      gap: 18px;
+      align-items: start;
+    }
+
+    .panel-card{
+      background:#fff;
+      border:1px solid rgba(15,23,42,.06);
+      border-radius: 20px;
+      padding: 18px;
+      box-shadow: 0 18px 50px rgba(15,23,42,.08);
+    }
+    .panel-title{
+      font-family:"Space Grotesk";
+      font-size: 18px;
+      font-weight: 700;
+    }
+    .panel-desc{
+      margin-top: 8px;
+      color: rgba(15,23,42,.70);
+      font-size: 13.5px;
+      max-width: 60ch;
+    }
+    .panel-pills{
+      margin-top: 14px;
+      display:flex;
+      flex-wrap:wrap;
+      gap: 10px;
+    }
+    .pill2{
+      padding: 7px 10px;
+      border-radius: 999px;
+      background: rgba(15,23,42,.04);
+      border: 1px solid rgba(15,23,42,.10);
+      font-size: 12px;
+      font-weight: 900;
+      color: rgba(15,23,42,.70);
+    }
+    .panel-note{
+      margin-top: 14px;
+      font-size: 12px;
+      color: rgba(15,23,42,.55);
+      border-top: 1px dashed rgba(15,23,42,.14);
+      padding-top: 12px;
+    }
+
+    .plan-grid{
+      display:grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 14px;
+    }
+    .plan2{
+      background:#fff;
+      border-radius: 20px;
+      border: 1px solid rgba(15,23,42,.06);
+      box-shadow: 0 18px 50px rgba(15,23,42,.08);
+      padding: 16px;
+      display:flex;
+      flex-direction:column;
+      min-height: 250px;
+    }
+    .plan2-top{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:10px;
+    }
+    .tag2{
+      font-size: 11px;
+      font-weight: 900;
+      padding: 6px 10px;
+      border-radius: 999px;
+      background: rgba(249,115,22,.16);
+      border: 1px solid rgba(249,115,22,.28);
+      color: rgba(15,23,42,.85);
+      white-space:nowrap;
+    }
+    .tag2.soft{
+      background: rgba(37,99,235,.10);
+      border-color: rgba(37,99,235,.22);
+    }
+    .tag2.outline{
+      background: transparent;
+      border-color: rgba(15,23,42,.18);
+    }
+    .plan2-name{
+      font-weight: 900;
+      font-size: 14px;
+      color: rgba(15,23,42,.92);
+    }
+    .plan2-price{
+      margin-top: 12px;
+      display:flex;
+      align-items:flex-end;
+      gap: 6px;
+      line-height: 1;
+    }
+    .plan2-price span{font-family:"Space Grotesk"; font-size: 16px; color: rgba(15,23,42,.85);}
+    .plan2-price b{font-family:"Space Grotesk"; font-size: 34px; letter-spacing:.01em;}
+    .plan2-price em{font-style:normal; font-weight:800; font-size: 12px; color: rgba(15,23,42,.55); padding-bottom: 4px;}
+
+    .plan2-meta{
+      margin-top: 12px;
+      display:grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+      padding-top: 12px;
+      border-top: 1px solid rgba(15,23,42,.08);
+    }
+    .plan2-meta small{
+      display:block;
+      font-size: 11px;
+      font-weight: 900;
+      letter-spacing:.08em;
+      text-transform:uppercase;
+      color: rgba(15,23,42,.50);
+    }
+    .plan2-meta strong{
+      display:block;
+      font-size: 12.5px;
+      font-weight: 900;
+      color: rgba(15,23,42,.85);
+      margin-top: 4px;
+    }
+    .plan2-cta{
+      margin-top: 14px;
+      border: none;
+      border-radius: 999px;
+      padding: 12px 14px;
+      font-size: 13.5px;
+      font-weight: 900;
+      cursor:pointer;
+      background: #0f172a;
+      color:#fff;
+      transition: transform .16s ease, box-shadow .16s ease;
+      box-shadow: 0 18px 46px rgba(15,23,42,.20);
+    }
+    .plan2-cta:hover{
+      transform: translateY(-1px);
+      box-shadow: 0 24px 60px rgba(15,23,42,.26);
+    }
+    .plan2-foot{
+      margin-top: 10px;
+      color: rgba(15,23,42,.55);
+      font-size: 12px;
+    }
+
+    /* Why cards */
     .cards{
       display:grid;
       grid-template-columns: repeat(12, 1fr);
@@ -579,57 +762,6 @@
     .card h4{font-size: 15px; font-weight: 900; line-height:1.25; margin-top: 2px;}
     .card p{margin-top: 6px; font-size: 13.5px; color: rgba(15,23,42,.74);}
 
-    .cta-band{
-      margin-top: 22px;
-      border-radius: var(--r-xl);
-      padding: 22px;
-      background: linear-gradient(135deg, rgba(37,99,235,.10), rgba(249,115,22,.08));
-      border: 1px solid rgba(15,23,42,.10);
-      box-shadow: 0 18px 60px rgba(15,23,42,.08);
-      display:flex;
-      align-items:center;
-      justify-content:space-between;
-      gap: 18px;
-      flex-wrap:wrap;
-    }
-    .cta-band h3{
-      font-family:"Space Grotesk";
-      font-size: 22px;
-      line-height: 1.2;
-    }
-    .cta-band p{
-      margin-top: 6px;
-      color: rgba(15,23,42,.70);
-      font-size: 13.5px;
-      max-width: 70ch;
-    }
-    .cta-row{display:flex; gap: 10px; flex-wrap:wrap;}
-
-    .btn2{
-      display:inline-flex;
-      align-items:center;
-      justify-content:center;
-      gap: 10px;
-      border-radius: 999px;
-      padding: 10px 16px;
-      font-size: 14px;
-      font-weight: 900;
-      cursor:pointer;
-      border: 1px solid rgba(15,23,42,.14);
-      background:#fff;
-      box-shadow: 0 12px 30px rgba(15,23,42,.08);
-      transition: transform .16s ease, box-shadow .16s ease;
-      white-space: nowrap;
-    }
-    .btn2:hover{transform: translateY(-1px); box-shadow: 0 18px 42px rgba(15,23,42,.12);}
-    .btn2.primary{
-      background: var(--blue);
-      color:#fff;
-      border-color: transparent;
-      box-shadow: 0 18px 46px rgba(37,99,235,.26);
-    }
-    .btn2.primary:hover{box-shadow: 0 24px 60px rgba(37,99,235,.34);}
-
     /* Footer */
     footer{
       margin-top: 86px;
@@ -655,6 +787,10 @@
       .hero{grid-template-columns: 1fr; padding: 22px; min-height: unset}
       .hero-frame{inset: 16px 16px}
       .plan{max-width: none}
+
+      .panel-grid{grid-template-columns: 1fr;}
+      .plan-grid{grid-template-columns: 1fr;}
+      .cards .card{grid-column: span 12;}
     }
 
     /* Keep marquee moving unless user explicitly requests reduced motion */
@@ -676,7 +812,7 @@
         <a href="#why">Why Occta</a>
         <a href="#contact">Contact</a>
       </nav>
-      <button class="pill" type="button" onclick="document.getElementById('plans').scrollIntoView({behavior:'smooth'})">Get started</button>
+      <button class="pill" type="button" onclick="document.getElementById('planTabs').scrollIntoView({behavior:'smooth'})">Get started</button>
     </div>
   </header>
 
@@ -701,8 +837,21 @@
           <span class="badge">New</span>
 
           <div class="bar-track" aria-hidden="true">
-            <!-- JS will duplicate this content so it always scrolls smoothly -->
             <div class="bar-mover" id="marquee">
+              <span>Full Fibre from £19.99/mo</span>
+              <span class="sep">•</span>
+              <span>Clear pricing, no surprises</span>
+              <span class="sep">•</span>
+              <span>Broadband</span>
+              <span class="sep">•</span>
+              <span>SIM</span>
+              <span class="sep">•</span>
+              <span>Landline</span>
+              <span class="sep">•</span>
+              <span>Support that actually helps</span>
+              <span class="sep">•</span>
+              <span>Cancel online, no hassle</span>
+              <span class="sep">•</span>
               <span>Full Fibre from £19.99/mo</span>
               <span class="sep">•</span>
               <span>Clear pricing, no surprises</span>
@@ -719,7 +868,7 @@
             </div>
           </div>
 
-          <button class="bar-cta" type="button" onclick="document.getElementById('plans').scrollIntoView({behavior:'smooth'})">
+          <button class="bar-cta" type="button" onclick="document.getElementById('planTabs').scrollIntoView({behavior:'smooth'})">
             View plans ↗
           </button>
         </div>
@@ -764,7 +913,7 @@
 
             <div class="hero-actions">
               <button class="cta" type="button" onclick="document.getElementById('postcode').focus()">🚀 Let’s get you online</button>
-              <a class="link" href="#plans">View plans →</a>
+              <a class="link" href="#planTabs">View plans →</a>
             </div>
           </div>
 
@@ -789,6 +938,292 @@
 
               <div class="result" id="postcodeResult" role="status" aria-live="polite"></div>
             </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Tabs + Plans -->
+      <section class="section" id="planTabs">
+        <div class="section-head">
+          <div>
+            <div class="kicker"><span class="k-dot"></span> PICK A SERVICE</div>
+            <div class="h2">Choose what you’re shopping for.</div>
+            <div class="sub">
+              Broadband, SIM or Bundles — same Occta promise: clear pricing, no faff, and support that actually helps.
+            </div>
+          </div>
+        </div>
+
+        <!-- Tabs -->
+        <div class="tabs" role="tablist" aria-label="Service tabs">
+          <button class="tab is-active" role="tab" aria-selected="true" aria-controls="tab-broadband" id="tabBtn-broadband" data-tab="broadband">
+            Broadband
+          </button>
+          <button class="tab" role="tab" aria-selected="false" aria-controls="tab-sim" id="tabBtn-sim" data-tab="sim">
+            SIM Plans
+          </button>
+          <button class="tab" role="tab" aria-selected="false" aria-controls="tab-bundles" id="tabBtn-bundles" data-tab="bundles">
+            Bundles
+          </button>
+        </div>
+
+        <!-- Panels -->
+        <div class="tab-panels">
+          <!-- Broadband -->
+          <div class="panel is-active" role="tabpanel" id="tab-broadband" aria-labelledby="tabBtn-broadband">
+            <div class="panel-grid">
+              <div class="panel-left">
+                <div class="panel-card">
+                  <div class="panel-title">Broadband — what you’ll get</div>
+                  <div class="panel-desc">Stable speeds, clean setup, and pricing you can understand without a magnifying glass.</div>
+
+                  <div class="panel-pills">
+                    <span class="pill2">Full Fibre options</span>
+                    <span class="pill2">Router included*</span>
+                    <span class="pill2">Clear monthly cost</span>
+                    <span class="pill2">Easy switching help</span>
+                  </div>
+
+                  <div class="panel-note">
+                    *Availability varies by postcode. Final speed shown after availability check.
+                  </div>
+                </div>
+              </div>
+
+              <div class="panel-right">
+                <div class="plan-grid">
+                  <article class="plan2">
+                    <div class="plan2-top">
+                      <span class="tag2">Popular</span>
+                      <span class="plan2-name">Full Fibre Starter</span>
+                    </div>
+                    <div class="plan2-price"><span>£</span><b>19.99</b><em>/mo</em></div>
+                    <div class="plan2-meta">
+                      <div><small>Speed</small><strong>Up to 150 Mbps</strong></div>
+                      <div><small>Contract</small><strong>12 months</strong></div>
+                      <div><small>Setup</small><strong>£0*</strong></div>
+                      <div><small>Router</small><strong>Included*</strong></div>
+                    </div>
+                    <button class="plan2-cta" type="button" onclick="scrollToChecker()">Get me online →</button>
+                    <div class="plan2-foot">Good for streaming + work calls.</div>
+                  </article>
+
+                  <article class="plan2">
+                    <div class="plan2-top">
+                      <span class="tag2 soft">Best value</span>
+                      <span class="plan2-name">Full Fibre Plus</span>
+                    </div>
+                    <div class="plan2-price"><span>£</span><b>24.99</b><em>/mo</em></div>
+                    <div class="plan2-meta">
+                      <div><small>Speed</small><strong>Up to 300 Mbps</strong></div>
+                      <div><small>Contract</small><strong>12 months</strong></div>
+                      <div><small>Setup</small><strong>£0*</strong></div>
+                      <div><small>Router</small><strong>Included*</strong></div>
+                    </div>
+                    <button class="plan2-cta" type="button" onclick="scrollToChecker()">Sort my Wi-Fi, mate →</button>
+                    <div class="plan2-foot">Ideal for families + multiple devices.</div>
+                  </article>
+
+                  <article class="plan2">
+                    <div class="plan2-top">
+                      <span class="tag2 outline">Fast</span>
+                      <span class="plan2-name">Full Fibre Max</span>
+                    </div>
+                    <div class="plan2-price"><span>£</span><b>29.99</b><em>/mo</em></div>
+                    <div class="plan2-meta">
+                      <div><small>Speed</small><strong>Up to 500 Mbps</strong></div>
+                      <div><small>Contract</small><strong>12 months</strong></div>
+                      <div><small>Setup</small><strong>£0*</strong></div>
+                      <div><small>Router</small><strong>Included*</strong></div>
+                    </div>
+                    <button class="plan2-cta" type="button" onclick="scrollToChecker()">I want the fast one →</button>
+                    <div class="plan2-foot">For heavy streaming + gaming.</div>
+                  </article>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- SIM -->
+          <div class="panel" role="tabpanel" id="tab-sim" aria-labelledby="tabBtn-sim">
+            <div class="panel-grid">
+              <div class="panel-left">
+                <div class="panel-card">
+                  <div class="panel-title">SIM Plans — what you’ll get</div>
+                  <div class="panel-desc">Simple tiers, no weird surprises, and a plan that fits real life.</div>
+
+                  <div class="panel-pills">
+                    <span class="pill2">Keep your number</span>
+                    <span class="pill2">No hidden add-ons</span>
+                    <span class="pill2">Monthly flexibility*</span>
+                    <span class="pill2">UK support</span>
+                  </div>
+
+                  <div class="panel-note">
+                    *Final terms depend on your selected plan. Coverage varies by area.
+                  </div>
+                </div>
+              </div>
+
+              <div class="panel-right">
+                <div class="plan-grid">
+                  <article class="plan2">
+                    <div class="plan2-top">
+                      <span class="tag2">Popular</span>
+                      <span class="plan2-name">Lite Data</span>
+                    </div>
+                    <div class="plan2-price"><span>£</span><b>8.00</b><em>/mo</em></div>
+                    <div class="plan2-meta">
+                      <div><small>Data</small><strong>10 GB</strong></div>
+                      <div><small>Minutes</small><strong>Unlimited</strong></div>
+                      <div><small>Texts</small><strong>Unlimited</strong></div>
+                      <div><small>Roaming</small><strong>UK only*</strong></div>
+                    </div>
+                    <button class="plan2-cta" type="button" onclick="goToContact()">Start my SIM →</button>
+                    <div class="plan2-foot">For light browsing + WhatsApp.</div>
+                  </article>
+
+                  <article class="plan2">
+                    <div class="plan2-top">
+                      <span class="tag2 soft">Best value</span>
+                      <span class="plan2-name">Everyday</span>
+                    </div>
+                    <div class="plan2-price"><span>£</span><b>12.00</b><em>/mo</em></div>
+                    <div class="plan2-meta">
+                      <div><small>Data</small><strong>50 GB</strong></div>
+                      <div><small>Minutes</small><strong>Unlimited</strong></div>
+                      <div><small>Texts</small><strong>Unlimited</strong></div>
+                      <div><small>Roaming</small><strong>UK only*</strong></div>
+                    </div>
+                    <button class="plan2-cta" type="button" onclick="goToContact()">That’ll do nicely →</button>
+                    <div class="plan2-foot">For daily streaming + socials.</div>
+                  </article>
+
+                  <article class="plan2">
+                    <div class="plan2-top">
+                      <span class="tag2 outline">Big data</span>
+                      <span class="plan2-name">Unlimited</span>
+                    </div>
+                    <div class="plan2-price"><span>£</span><b>18.00</b><em>/mo</em></div>
+                    <div class="plan2-meta">
+                      <div><small>Data</small><strong>Unlimited</strong></div>
+                      <div><small>Minutes</small><strong>Unlimited</strong></div>
+                      <div><small>Texts</small><strong>Unlimited</strong></div>
+                      <div><small>Fair use</small><strong>Applies</strong></div>
+                    </div>
+                    <button class="plan2-cta" type="button" onclick="goToContact()">Give me unlimited →</button>
+                    <div class="plan2-foot">For power users + hotspot.</div>
+                  </article>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Bundles -->
+          <div class="panel" role="tabpanel" id="tab-bundles" aria-labelledby="tabBtn-bundles">
+            <div class="panel-grid">
+              <div class="panel-left">
+                <div class="panel-card">
+                  <div class="panel-title">Bundles — what you’ll get</div>
+                  <div class="panel-desc">Combine services to keep it cheaper and simpler — one place to manage everything.</div>
+
+                  <div class="panel-pills">
+                    <span class="pill2">Broadband + SIM</span>
+                    <span class="pill2">Broadband + Landline</span>
+                    <span class="pill2">Single monthly bill</span>
+                    <span class="pill2">Priority support</span>
+                  </div>
+
+                  <div class="panel-note">
+                    Bundles depend on availability at your address.
+                  </div>
+                </div>
+              </div>
+
+              <div class="panel-right">
+                <div class="plan-grid">
+                  <article class="plan2">
+                    <div class="plan2-top">
+                      <span class="tag2">Popular</span>
+                      <span class="plan2-name">Fibre + SIM</span>
+                    </div>
+                    <div class="plan2-price"><span>£</span><b>29.99</b><em>/mo</em></div>
+                    <div class="plan2-meta">
+                      <div><small>Broadband</small><strong>Up to 150 Mbps</strong></div>
+                      <div><small>SIM</small><strong>50 GB</strong></div>
+                      <div><small>Bill</small><strong>Single</strong></div>
+                      <div><small>Support</small><strong>Priority</strong></div>
+                    </div>
+                    <button class="plan2-cta" type="button" onclick="scrollToChecker()">Bundle me up →</button>
+                    <div class="plan2-foot">Great value for most homes.</div>
+                  </article>
+
+                  <article class="plan2">
+                    <div class="plan2-top">
+                      <span class="tag2 soft">Best value</span>
+                      <span class="plan2-name">Fibre + Landline</span>
+                    </div>
+                    <div class="plan2-price"><span>£</span><b>27.99</b><em>/mo</em></div>
+                    <div class="plan2-meta">
+                      <div><small>Broadband</small><strong>Up to 150 Mbps</strong></div>
+                      <div><small>Landline</small><strong>Included*</strong></div>
+                      <div><small>Number</small><strong>Keep it</strong></div>
+                      <div><small>Bill</small><strong>Single</strong></div>
+                    </div>
+                    <button class="plan2-cta" type="button" onclick="scrollToChecker()">Keep my number →</button>
+                    <div class="plan2-foot">For households that still use a landline.</div>
+                  </article>
+
+                  <article class="plan2">
+                    <div class="plan2-top">
+                      <span class="tag2 outline">All-in</span>
+                      <span class="plan2-name">Fibre + SIM + Landline</span>
+                    </div>
+                    <div class="plan2-price"><span>£</span><b>34.99</b><em>/mo</em></div>
+                    <div class="plan2-meta">
+                      <div><small>Broadband</small><strong>Up to 300 Mbps</strong></div>
+                      <div><small>SIM</small><strong>Unlimited</strong></div>
+                      <div><small>Landline</small><strong>Included*</strong></div>
+                      <div><small>Support</small><strong>Priority</strong></div>
+                    </div>
+                    <button class="plan2-cta" type="button" onclick="scrollToChecker()">All sorted →</button>
+                    <div class="plan2-foot">One bill. One place. Less hassle.</div>
+                  </article>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- Service anchors (for menu + brand links) -->
+      <section class="section" id="broadband">
+        <div class="section-head">
+          <div>
+            <div class="kicker"><span class="k-dot"></span> BROADBAND</div>
+            <div class="h2">Broadband that just gets on with it.</div>
+            <div class="sub">Clear tiers, honest expectations, and upgrades when you actually need them.</div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="sim">
+        <div class="section-head">
+          <div>
+            <div class="kicker"><span class="k-dot"></span> SIM PLANS</div>
+            <div class="h2">SIM plans with no silly surprises.</div>
+            <div class="sub">Simple data tiers, clear billing, and a plan that fits normal life.</div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="landline">
+        <div class="section-head">
+          <div>
+            <div class="kicker"><span class="k-dot"></span> LANDLINE</div>
+            <div class="h2">Landlines, handled properly.</div>
+            <div class="sub">Keep your number. Clear steps. No accidental “upgrades”.</div>
           </div>
         </div>
       </section>
@@ -846,61 +1281,7 @@
         </div>
       </section>
 
-      <!-- Plans CTA -->
-      <section class="section" id="plans">
-        <div class="section-head">
-          <div>
-            <div class="kicker"><span class="k-dot"></span> VALUE + RELIABILITY</div>
-            <div class="h2">Economical doesn’t mean “cheap and chaotic”.</div>
-            <div class="sub">
-              It means fair, clear, and actually usable — with speeds and support that hold up day-to-day.
-            </div>
-          </div>
-        </div>
-
-        <div class="cta-band">
-          <div>
-            <h3>Ready for internet without the nonsense?</h3>
-            <p>Check your postcode, pick your service, and we’ll handle the boring bits.</p>
-          </div>
-          <div class="cta-row">
-            <button class="btn2 primary" type="button" onclick="document.getElementById('postcode').focus()">Check availability</button>
-            <a class="btn2" href="#broadband">Explore broadband</a>
-          </div>
-        </div>
-      </section>
-
-      <!-- Service anchors -->
-      <section class="section" id="broadband">
-        <div class="section-head">
-          <div>
-            <div class="kicker"><span class="k-dot"></span> BROADBAND</div>
-            <div class="h2">Broadband that just gets on with it.</div>
-            <div class="sub">Clear tiers, honest expectations, and upgrades when you actually need them.</div>
-          </div>
-        </div>
-      </section>
-
-      <section class="section" id="sim">
-        <div class="section-head">
-          <div>
-            <div class="kicker"><span class="k-dot"></span> SIM PLANS</div>
-            <div class="h2">SIM plans with no silly surprises.</div>
-            <div class="sub">Simple data tiers, clear billing, and a plan that fits normal life.</div>
-          </div>
-        </div>
-      </section>
-
-      <section class="section" id="landline">
-        <div class="section-head">
-          <div>
-            <div class="kicker"><span class="k-dot"></span> LANDLINE</div>
-            <div class="h2">Landlines, handled properly.</div>
-            <div class="sub">Keep your number. Clear steps. No accidental “upgrades”.</div>
-          </div>
-        </div>
-      </section>
-
+      <!-- Contact -->
       <section class="section" id="contact">
         <div class="section-head">
           <div>
@@ -924,6 +1305,16 @@
   <script>
     // year
     document.getElementById("year").textContent = new Date().getFullYear();
+
+    // Buttons used by plans
+    function scrollToChecker(){
+      const el = document.getElementById("postcode");
+      if(el){ el.focus(); el.scrollIntoView({behavior:"smooth", block:"center"}); }
+    }
+    function goToContact(){
+      const el = document.getElementById("contact");
+      if(el){ el.scrollIntoView({behavior:"smooth"}); }
+    }
 
     // postcode checker (demo validation only)
     const form = document.getElementById("postcodeForm");
@@ -959,34 +1350,58 @@
       out.innerHTML = "<strong>Looks good.</strong> We can confirm Full Fibre options for <strong>" + pc + "</strong> here (preview).";
     });
 
-    // marquee: duplicate content to guarantee smooth movement on all screens
-    const marquee = document.getElementById("marquee");
-    // Duplicate once so the animation can move -50% reliably.
-    // We also add a spacer to prevent text sticking together.
-    const clone = marquee.cloneNode(true);
-    clone.id = "";
-    marquee.parentElement.appendChild(clone);
+    // marquee: make sure it always scrolls smoothly
+    (function setupMarquee(){
+      const marquee = document.getElementById("marquee");
+      if(!marquee) return;
 
-    // Make both inline (same class already) and ensure the mover is actually "two halves".
-    // We wrap them in a single flex row so -50% equals exactly one set.
-    const track = marquee.parentElement;
-    const wrapper = document.createElement("div");
-    wrapper.className = "bar-mover";
-    wrapper.style.animation = getComputedStyle(marquee).animation;
-    wrapper.style.gap = getComputedStyle(marquee).gap || "18px";
+      // If we've already wrapped it once, do nothing.
+      if (marquee.parentElement && marquee.parentElement.dataset && marquee.parentElement.dataset.wrapped === "1") return;
 
-    // Move the two sets into wrapper
-    wrapper.appendChild(marquee);
-    wrapper.appendChild(clone);
+      const track = marquee.parentElement;
+      if(!track) return;
 
-    // Replace old mover(s) with wrapper
-    track.innerHTML = "";
-    track.appendChild(wrapper);
+      // Clone the content once
+      const clone = marquee.cloneNode(true);
+      clone.id = "";
 
-    // Respect reduced motion
-    if (window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
-      wrapper.style.animation = "none";
-    }
+      const wrapper = document.createElement("div");
+      wrapper.className = "bar-mover";
+      wrapper.style.animation = getComputedStyle(marquee).animation;
+      wrapper.style.gap = getComputedStyle(marquee).gap || "18px";
+
+      wrapper.appendChild(marquee);
+      wrapper.appendChild(clone);
+
+      track.innerHTML = "";
+      track.appendChild(wrapper);
+      track.dataset.wrapped = "1";
+
+      if (window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+        wrapper.style.animation = "none";
+      }
+    })();
+
+    // Tabs
+    const tabs = document.querySelectorAll(".tab");
+    const panels = document.querySelectorAll(".panel");
+
+    tabs.forEach(btn=>{
+      btn.addEventListener("click", ()=>{
+        const key = btn.dataset.tab;
+
+        tabs.forEach(t=>{
+          t.classList.remove("is-active");
+          t.setAttribute("aria-selected","false");
+        });
+        panels.forEach(p=>p.classList.remove("is-active"));
+
+        btn.classList.add("is-active");
+        btn.setAttribute("aria-selected","true");
+        const panel = document.getElementById("tab-" + key);
+        if(panel) panel.classList.add("is-active");
+      });
+    });
   </script>
 </body>
 </html>
