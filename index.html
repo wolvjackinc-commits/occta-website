@@ -3,420 +3,990 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Occta — Full Fibre Broadband, SIM & Bundles</title>
+  <title>Occta Limited — Full Fibre Broadband, SIM Plans & Landline</title>
 
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@600;700&display=swap" rel="stylesheet">
 
   <style>
     :root{
-      --ink:#0f172a;
-      --muted:#64748b;
-      --bg:#faf9f7;
-      --card:#ffffff;
-      --line:rgba(15,23,42,.08);
-      --brand:#0ea5e9;
-      --pill:#f1f5f9;
-      --cta:#0f172a;
-      --radius:22px;
-      --shadow:0 30px 80px rgba(15,23,42,.10);
+      --bg:#f6f4ef;
+      --text:#0f172a;
+      --muted:#6b7280;
+      --line: rgba(15,23,42,.10);
+
+      --white:#ffffff;
+      --ink:#0b1220;
+
+      --blue:#2563eb;
+      --orange:#f97316;
+      --yellow:#facc15;
+
+      --r-xl:26px;
+      --r-lg:20px;
+      --r-md:16px;
+
+      --shadow-soft: 0 28px 70px rgba(15,23,42,.12);
+      --shadow-card: 0 18px 50px rgba(15,23,42,.10);
+
+      --container-max: 1320px;
+      --pad: 28px;
     }
 
-    *{box-sizing:border-box}
+    *{box-sizing:border-box;margin:0;padding:0}
+    html,body{height:100%}
     body{
-      margin:0;
-      font-family:Inter,system-ui,-apple-system,sans-serif;
-      background:radial-gradient(80% 60% at 50% 0%, #ffffff 0%, #f6f3ee 60%, var(--bg) 100%);
-      color:var(--ink);
+      font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      background: radial-gradient(circle at top, #fbf9f6 0%, #f6f4ef 55%, #eef1f5 100%);
+      color: var(--text);
+      line-height: 1.55;
     }
+    a{color:inherit;text-decoration:none}
+    .container{max-width:var(--container-max); margin:0 auto; padding: 0 var(--pad);}
 
-    a{text-decoration:none;color:inherit}
-
-    /* ================= HEADER ================= */
+    /* Header */
     header{
-      position:sticky;top:0;z-index:10;
-      background:rgba(255,255,255,.85);
-      backdrop-filter:blur(12px);
-      border-bottom:1px solid var(--line);
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      background: rgba(255,255,255,.92);
+      backdrop-filter: blur(14px);
+      border-bottom: 1px solid #e5e7eb;
     }
     .nav{
-      max-width:1200px;
-      margin:auto;
-      padding:18px 24px;
+      height: 76px;
       display:flex;
       align-items:center;
       justify-content:space-between;
+      gap: 18px;
     }
     .logo{
-      font-family:Space Grotesk;
-      font-size:26px;
-      font-weight:700;
-      letter-spacing:.02em;
+      display:flex;
+      align-items:center;
+      gap: 10px;
+      font-family: "Space Grotesk";
+      letter-spacing: .18em;
+      text-transform: uppercase;
+      font-size: 14px;
+      white-space: nowrap;
+    }
+    .logo-badge{
+      width: 22px;height: 22px;
+      border-radius: 50%;
+      border: 1px solid rgba(0,0,0,.75);
+      display:flex;align-items:center;justify-content:center;
+      font-size: 14px; line-height: 1;
     }
     .menu{
-      display:flex;gap:28px;
-      font-weight:500;
-      color:var(--muted);
-    }
-    .menu a:hover{color:var(--ink)}
-    .nav-cta{
-      padding:10px 18px;
-      border-radius:999px;
-      border:1px solid var(--line);
-      font-weight:600;
-    }
-
-    /* ================= HERO ================= */
-    .hero{
-      max-width:1200px;
-      margin:80px auto 40px;
-      padding:0 24px;
-    }
-    .hero-card{
-      border-radius:36px;
-      padding:64px;
-      background:
-        radial-gradient(50% 80% at 20% 30%, #2dd4bf 0%, transparent 60%),
-        radial-gradient(60% 90% at 80% 30%, #a855f7 0%, transparent 65%),
-        linear-gradient(120deg,#0891b2,#9333ea);
-      color:white;
-      box-shadow:var(--shadow);
-      display:grid;
-      grid-template-columns:1.2fr .8fr;
-      gap:48px;
-    }
-    .hero h1{
-      font-family:Space Grotesk;
-      font-size:48px;
-      line-height:1.1;
-      margin:0 0 14px;
-    }
-    .hero p{
-      font-size:17px;
-      line-height:1.6;
-      opacity:.95;
-      max-width:520px;
-    }
-    .hero-adv{
-      margin-top:16px;
-      font-weight:600;
-      opacity:.95;
-    }
-    .hero-actions{
-      margin-top:26px;
       display:flex;
-      gap:16px;
+      align-items:center;
+      gap: 28px;
+      font-size: 14px;
+      color: var(--muted);
     }
-    .btn-primary{
-      background:white;
-      color:#0f172a;
-      padding:14px 22px;
-      border-radius:999px;
-      font-weight:700;
+    .menu a{
+      position:relative;
+      padding: 6px 0;
+      font-weight: 600;
     }
-    .btn-secondary{
-      padding:14px 22px;
-      border-radius:999px;
-      border:1px solid rgba(255,255,255,.35);
-      color:white;
-      font-weight:600;
+    .menu a:hover{color: #0f172a}
+    .menu a::after{
+      content:"";
+      position:absolute;
+      left:0; bottom:-6px;
+      height:2px; width:0;
+      background: rgba(15,23,42,.85);
+      border-radius: 999px;
+      transition: width .18s ease;
     }
-
-    /* ================= SERVICE SELECTOR ================= */
-    .section{
-      max-width:1200px;
-      margin:90px auto;
-      padding:0 24px;
-    }
-    .eyebrow{
-      font-size:12px;
-      letter-spacing:.16em;
-      color:var(--muted);
-      font-weight:700;
-    }
-    h2{
-      font-family:Space Grotesk;
-      font-size:38px;
-      margin:10px 0;
-    }
-    .sub{
-      color:var(--muted);
-      max-width:640px;
-      line-height:1.6;
-    }
-
-    /* Tabs */
-    .tabs{
-      margin-top:32px;
-      background:rgba(255,255,255,.7);
-      border:1px solid var(--line);
-      border-radius:999px;
-      padding:6px;
-      display:flex;
-      gap:6px;
-      width:max-content;
-    }
-    .tab{
-      padding:10px 22px;
-      border-radius:999px;
-      font-weight:600;
-      cursor:pointer;
-      color:var(--muted);
-    }
-    .tab.active{
-      background:#0f172a;
-      color:white;
-    }
-
-    /* Content layout */
-    .service-grid{
-      margin-top:36px;
-      display:grid;
-      grid-template-columns:1.1fr 2fr;
-      gap:28px;
-      align-items:stretch;
-    }
-
-    .info-card{
-      background:var(--card);
-      border-radius:var(--radius);
-      padding:28px;
-      border:1px solid var(--line);
-    }
-    .info-card h3{
-      margin:0 0 10px;
-      font-size:22px;
-    }
-    .pills{
-      display:flex;
-      flex-wrap:wrap;
-      gap:10px;
-      margin:18px 0;
-    }
+    .menu a:hover::after{width:100%}
     .pill{
-      padding:8px 14px;
+      border: 1px solid rgba(15,23,42,.30);
+      background:#fff;
       border-radius:999px;
-      background:var(--pill);
-      border:1px solid var(--line);
-      font-size:13px;
-      font-weight:600;
-      color:#334155;
+      padding: 9px 14px;
+      font-size: 13px;
+      font-weight: 800;
+      cursor:pointer;
+      white-space: nowrap;
+      box-shadow: 0 10px 24px rgba(15,23,42,.06);
+      transition: transform .16s ease, box-shadow .16s ease;
+    }
+    .pill:hover{
+      transform: translateY(-1px);
+      box-shadow: 0 14px 34px rgba(15,23,42,.10);
     }
 
-    /* Plans */
-    .plans{
-      display:grid;
-      grid-template-columns:repeat(3,1fr);
-      gap:22px;
+    /* Top spacing */
+    main{padding: 56px 0 0;}
+
+    /* OCCTA brand card + services (right) */
+    .brand{
+      background: #f2ece3;
+      border-radius: var(--r-xl);
+      padding: 34px 36px;
+      border: 1px solid rgba(0,0,0,.06);
+      box-shadow: var(--shadow-soft);
+      position: relative;
+      overflow:hidden;
     }
-    .plan{
-      background:var(--card);
-      border-radius:26px;
-      padding:28px;
-      border:1px solid var(--line);
+    .brand::after{
+      content:"";
+      position:absolute;
+      right: -160px; top: -140px;
+      width: 360px; height: 360px;
+      border-radius: 50%;
+      background:
+        radial-gradient(circle at 30% 30%, rgba(255,255,255,.92), transparent 55%),
+        radial-gradient(circle at 70% 60%, rgba(37,99,235,.18), transparent 65%);
+      opacity: .9;
+      pointer-events:none;
+    }
+    .brand-grid{
+      display:flex;
+      align-items:flex-start;
+      justify-content:space-between;
+      gap: 26px;
+      position: relative;
+      z-index: 1;
+    }
+    .brand-name{
+      font-family:"Space Grotesk";
+      font-size: 72px;
+      letter-spacing: .18em;
+      line-height: 1;
+      color: #0b1220;
+    }
+    .services{
       display:flex;
       flex-direction:column;
+      gap: 8px;
+      align-items:flex-end;
+      padding-top: 6px;
+      min-width: 160px;
+    }
+    .services a{
+      font-size: 12px;
+      font-weight: 800;
+      color: rgba(15,23,42,.72);
+      letter-spacing: .02em;
+      padding: 6px 10px;
+      border-radius: 999px;
+      border: 1px solid rgba(15,23,42,.10);
+      background: rgba(255,255,255,.55);
+      transition: transform .16s ease, background .16s ease, border-color .16s ease;
+    }
+    .services a:hover{
+      transform: translateY(-1px);
+      background: rgba(255,255,255,.82);
+      border-color: rgba(15,23,42,.18);
+    }
+
+    /* Marquee bar */
+    .bar{
+      margin-top: 18px;
+      border-radius: var(--r-xl);
+      overflow:hidden;
+      border: 1px solid rgba(15,23,42,.16);
+      box-shadow: var(--shadow-card);
+      background: linear-gradient(90deg, var(--orange), var(--yellow));
+    }
+    .bar-inner{
+      display:flex;
+      align-items:center;
+      gap: 14px;
+      padding: 12px 14px;
     }
     .badge{
-      align-self:flex-start;
-      font-size:12px;
-      font-weight:700;
-      padding:6px 12px;
-      border-radius:999px;
-      background:#eef2ff;
-      color:#3730a3;
-      margin-bottom:12px;
+      display:inline-flex;
+      align-items:center;
+      gap: 8px;
+      padding: 6px 10px;
+      border-radius: 999px;
+      background: rgba(255,255,255,.26);
+      border: 1px solid rgba(15,23,42,.20);
+      font-size: 12px;
+      font-weight: 900;
+      color: rgba(15,23,42,.88);
+      white-space: nowrap;
     }
-    .plan h4{
-      margin:0;
-      font-size:20px;
+    .bar-track{
+      flex: 1;
+      min-width: 0;
+      overflow:hidden;
+      position: relative;
+    }
+    .bar-mover{
+      display:flex;
+      width: max-content;
+      gap: 18px;
+      white-space: nowrap;
+      will-change: transform;
+      animation: marquee 18s linear infinite;
+      font-size: 13px;
+      font-weight: 800;
+      color: rgba(15,23,42,.92);
+    }
+    .sep{opacity:.8}
+    .bar-cta{
+      background: rgba(255,255,255,.94);
+      border: 1px solid rgba(15,23,42,.55);
+      color: rgba(15,23,42,.92);
+      border-radius: 999px;
+      padding: 9px 14px;
+      font-size: 13px;
+      font-weight: 900;
+      cursor:pointer;
+      white-space: nowrap;
+      transition: transform .16s ease, box-shadow .16s ease;
+      box-shadow: 0 10px 24px rgba(15,23,42,.10);
+    }
+    .bar-cta:hover{
+      transform: translateY(-1px);
+      box-shadow: 0 14px 34px rgba(15,23,42,.14);
+    }
+    @keyframes marquee{
+      from{transform: translateX(0)}
+      to{transform: translateX(-50%)}
+    }
+
+    /* Hero */
+    .hero-wrap{
+      margin-top: 22px;
+      border-radius: var(--r-xl);
+      overflow:hidden;
+      border: 1px solid rgba(15,23,42,.10);
+      box-shadow: var(--shadow-soft);
+      background:
+        radial-gradient(circle at 18% 28%,#38bdf8,transparent 56%),
+        radial-gradient(circle at 78% 22%,#a855f7,transparent 60%),
+        radial-gradient(circle at 22% 84%,#22c55e,transparent 56%),
+        radial-gradient(circle at 74% 78%,#f97316,transparent 58%),
+        linear-gradient(135deg,#020617,#0f172a);
+      position: relative;
+    }
+    .hero{
+      position: relative;
+      padding: 44px;
+      min-height: 520px;
+      display:grid;
+      grid-template-columns: 1.35fr .95fr;
+      gap: 26px;
+      align-items: center;
+    }
+    .hero-frame{
+      position:absolute;
+      inset: 22px 22px;
+      border-radius: 26px;
+      border: 1px solid rgba(148,163,184,.42);
+      background: radial-gradient(circle at 10% 0%, rgba(148,163,184,.28), transparent 55%);
+      box-shadow: 0 40px 90px rgba(15,23,42,.55);
+      opacity: .92;
+      pointer-events:none;
+    }
+    .hero-left, .hero-right{position:relative; z-index:2;}
+    .hero h1{
+      font-family:"Space Grotesk";
+      font-size: 44px;
+      line-height: 1.10;
+      letter-spacing: -.01em;
+      color: #f8fafc;
+      margin-bottom: 12px;
+      text-shadow: 0 16px 36px rgba(0,0,0,.35);
+    }
+    .hero p{
+      font-size: 14px;
+      color: rgba(226,232,240,.92);
+      max-width: 66ch;
+    }
+
+    /* Featured plan card (clean, no checkmarks) */
+    .plan{
+      margin-top: 16px;
+      max-width: 560px;
+      border-radius: 22px;
+      padding: 16px;
+      background: rgba(255,255,255,.14);
+      border: 1px solid rgba(255,255,255,.22);
+      backdrop-filter: blur(14px);
+      box-shadow: 0 26px 70px rgba(0,0,0,.22);
+    }
+    .plan-top{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap: 12px;
+      margin-bottom: 10px;
+    }
+    .plan-top .mini{
+      font-size: 12px;
+      font-weight: 900;
+      color: rgba(248,250,252,.96);
+      padding: 6px 10px;
+      border-radius: 999px;
+      background: rgba(255,255,255,.16);
+      border: 1px solid rgba(255,255,255,.18);
+      white-space: nowrap;
+    }
+    .plan-top .type{
+      font-size: 12px;
+      font-weight: 900;
+      color: rgba(226,232,240,.92);
+      letter-spacing: .02em;
+      white-space: nowrap;
     }
     .price{
-      margin:16px 0;
-      font-size:36px;
-      font-weight:800;
+      display:flex;
+      align-items:flex-end;
+      gap: 8px;
+      line-height: 1;
+      margin-bottom: 10px;
     }
-    .price span{
-      font-size:14px;
-      color:var(--muted);
-      font-weight:600;
+    .price .currency{
+      font-family:"Space Grotesk";
+      font-size: 18px;
+      color: rgba(248,250,252,.95);
     }
-
-    .specs{
-      display:grid;
-      grid-template-columns:1fr 1fr;
-      gap:12px;
-      font-size:14px;
-      margin-bottom:18px;
+    .price .amount{
+      font-family:"Space Grotesk";
+      font-size: 46px;
+      color: #fff;
+      letter-spacing: .01em;
+      text-shadow: 0 14px 32px rgba(0,0,0,.25);
     }
-    .specs div strong{
-      display:block;
-      font-size:12px;
-      color:var(--muted);
-      text-transform:uppercase;
-      letter-spacing:.06em;
-      margin-bottom:4px;
+    .price .per{
+      font-size: 13px;
+      font-weight: 800;
+      color: rgba(226,232,240,.88);
+      padding-bottom: 6px;
     }
-
-    .plan-pills{
+    .plan-copy{
+      font-size: 13px;
+      color: rgba(226,232,240,.92);
+      max-width: 72ch;
+    }
+    .plan-meta{
+      margin-top: 12px;
+      padding-top: 12px;
+      border-top: 1px solid rgba(255,255,255,.14);
       display:flex;
       flex-wrap:wrap;
-      gap:8px;
-      margin-bottom:18px;
+      gap: 10px 14px;
+      color: rgba(226,232,240,.92);
+      font-size: 12px;
+      font-weight: 800;
     }
-    .plan-pills span{
-      font-size:12px;
-      font-weight:600;
-      padding:6px 10px;
-      border-radius:999px;
-      background:#f8fafc;
-      border:1px solid var(--line);
-      color:#334155;
+    .meta-pill{
+      padding: 6px 10px;
+      border-radius: 999px;
+      background: rgba(2,6,23,.24);
+      border: 1px solid rgba(255,255,255,.12);
+      white-space: nowrap;
     }
 
-    .plan button{
-      margin-top:auto;
-      padding:14px;
-      border-radius:999px;
-      border:none;
-      background:var(--cta);
-      color:white;
-      font-weight:700;
+    .hero-actions{
+      margin-top: 16px;
+      display:flex;
+      align-items:center;
+      gap: 14px;
+      flex-wrap:wrap;
+    }
+    .cta{
+      display:inline-flex;
+      align-items:center;
+      gap: 10px;
+      border: none;
+      background: var(--blue);
+      color:#fff;
+      border-radius: 999px;
+      padding: 12px 18px;
+      font-size: 14px;
+      font-weight: 900;
       cursor:pointer;
+      box-shadow: 0 18px 44px rgba(37,99,235,.34);
+      transition: transform .16s ease, box-shadow .16s ease;
+      white-space: nowrap;
     }
-    .plan small{
-      margin-top:10px;
-      color:var(--muted);
-      font-size:13px;
+    .cta:hover{
+      transform: translateY(-2px);
+      box-shadow: 0 24px 58px rgba(37,99,235,.44);
+    }
+    .link{
+      font-size: 14px;
+      font-weight: 800;
+      color: rgba(226,232,240,.90);
+      position:relative;
+      padding: 8px 0;
+    }
+    .link::after{
+      content:"";
+      position:absolute;
+      left:0; bottom: 2px;
+      width:0; height:2px;
+      background: rgba(226,232,240,.75);
+      border-radius: 999px;
+      transition: width .16s ease;
+    }
+    .link:hover::after{width:100%}
+
+    /* Availability box (right) */
+    .glass{
+      border-radius: 22px;
+      padding: 16px;
+      background: rgba(255,255,255,.14);
+      border: 1px solid rgba(255,255,255,.22);
+      backdrop-filter: blur(14px);
+      box-shadow: 0 26px 70px rgba(0,0,0,.25);
+      color:#fff;
+    }
+    .glass-head{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap: 10px;
+      margin-bottom: 10px;
+    }
+    .glass h3{
+      font-family:"Space Grotesk";
+      font-size: 16px;
+      letter-spacing: .01em;
+    }
+    .glass small{
+      font-size: 12px;
+      color: rgba(226,232,240,.88);
+      font-weight: 700;
+      opacity: .95;
+      white-space:nowrap;
+    }
+    .form{
+      display:flex;
+      gap: 10px;
+      margin-top: 10px;
+    }
+    .input{
+      flex:1;
+      height: 44px;
+      border-radius: 14px;
+      border: 1px solid rgba(255,255,255,.22);
+      background: rgba(2,6,23,.35);
+      color:#fff;
+      padding: 0 12px;
+      outline:none;
+      font-size: 14px;
+    }
+    .input::placeholder{color: rgba(226,232,240,.70)}
+    .btn{
+      height: 44px;
+      border-radius: 14px;
+      border: none;
+      padding: 0 14px;
+      font-size: 14px;
+      font-weight: 900;
+      background: rgba(255,255,255,.94);
+      color: #0f172a;
+      cursor:pointer;
+      transition: transform .16s ease, box-shadow .16s ease;
+      white-space: nowrap;
+    }
+    .btn:hover{
+      transform: translateY(-1px);
+      box-shadow: 0 18px 44px rgba(0,0,0,.22);
+    }
+    .hint{
+      margin-top: 10px;
+      font-size: 12px;
+      color: rgba(226,232,240,.90);
+      line-height: 1.45;
+      opacity: .95;
+    }
+    .result{
+      margin-top: 12px;
+      border-radius: 16px;
+      padding: 10px 12px;
+      border: 1px solid rgba(255,255,255,.18);
+      background: rgba(2,6,23,.28);
+      font-size: 12px;
+      color: rgba(226,232,240,.95);
+      display:none;
+    }
+    .result strong{color:#fff}
+    .result.show{display:block}
+
+    /* Sections */
+    .section{
+      padding: 88px 0 0;
+    }
+    .section-head{
+      display:flex;
+      align-items:flex-end;
+      justify-content:space-between;
+      gap: 18px;
+      margin-bottom: 22px;
+      flex-wrap:wrap;
+    }
+    .kicker{
+      display:flex;
+      align-items:center;
+      gap: 10px;
+      font-size: 12px;
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: .12em;
+      color: rgba(15,23,42,.68);
+    }
+    .k-dot{width:8px;height:8px;border-radius:999px;background: rgba(15,23,42,.22);}
+    .h2{
+      font-family:"Space Grotesk";
+      font-size: 30px;
+      line-height: 1.15;
+      margin-top: 8px;
+    }
+    .sub{
+      margin-top: 8px;
+      color: var(--muted);
+      font-size: 14px;
+      max-width: 76ch;
+    }
+    .cards{
+      display:grid;
+      grid-template-columns: repeat(12, 1fr);
+      gap: 18px;
+    }
+    .card{
+      grid-column: span 6;
+      background:#fff;
+      border-radius: var(--r-lg);
+      border: 1px solid rgba(15,23,42,.06);
+      box-shadow: var(--shadow-card);
+      padding: 18px;
+    }
+    .card-top{
+      display:flex;
+      align-items:flex-start;
+      gap: 12px;
+      margin-bottom: 10px;
+    }
+    .icon{
+      width: 40px; height: 40px;
+      border-radius: 14px;
+      display:flex; align-items:center; justify-content:center;
+      background: rgba(37,99,235,.08);
+      border: 1px solid rgba(37,99,235,.18);
+      font-size: 18px;
+    }
+    .card h4{font-size: 15px; font-weight: 900; line-height:1.25; margin-top: 2px;}
+    .card p{margin-top: 6px; font-size: 13.5px; color: rgba(15,23,42,.74);}
+
+    .cta-band{
+      margin-top: 22px;
+      border-radius: var(--r-xl);
+      padding: 22px;
+      background: linear-gradient(135deg, rgba(37,99,235,.10), rgba(249,115,22,.08));
+      border: 1px solid rgba(15,23,42,.10);
+      box-shadow: 0 18px 60px rgba(15,23,42,.08);
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap: 18px;
+      flex-wrap:wrap;
+    }
+    .cta-band h3{
+      font-family:"Space Grotesk";
+      font-size: 22px;
+      line-height: 1.2;
+    }
+    .cta-band p{
+      margin-top: 6px;
+      color: rgba(15,23,42,.70);
+      font-size: 13.5px;
+      max-width: 70ch;
+    }
+    .cta-row{display:flex; gap: 10px; flex-wrap:wrap;}
+
+    .btn2{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      gap: 10px;
+      border-radius: 999px;
+      padding: 10px 16px;
+      font-size: 14px;
+      font-weight: 900;
+      cursor:pointer;
+      border: 1px solid rgba(15,23,42,.14);
+      background:#fff;
+      box-shadow: 0 12px 30px rgba(15,23,42,.08);
+      transition: transform .16s ease, box-shadow .16s ease;
+      white-space: nowrap;
+    }
+    .btn2:hover{transform: translateY(-1px); box-shadow: 0 18px 42px rgba(15,23,42,.12);}
+    .btn2.primary{
+      background: var(--blue);
+      color:#fff;
+      border-color: transparent;
+      box-shadow: 0 18px 46px rgba(37,99,235,.26);
+    }
+    .btn2.primary:hover{box-shadow: 0 24px 60px rgba(37,99,235,.34);}
+
+    /* Footer */
+    footer{
+      margin-top: 86px;
+      background:#fff;
+      border-top: 1px solid #e5e7eb;
+    }
+    .footer{
+      padding: 18px 0;
+      font-size: 12px;
+      color:#6b7280;
+      display:flex;
+      justify-content:space-between;
+      gap: 16px;
+      flex-wrap:wrap;
     }
 
-    @media(max-width:900px){
-      .hero-card{grid-template-columns:1fr;padding:40px}
-      .service-grid{grid-template-columns:1fr}
-      .plans{grid-template-columns:1fr}
+    /* Responsive */
+    @media (max-width: 980px){
+      .menu{display:none}
+      .brand-grid{flex-direction:column; align-items:flex-start}
+      .brand-name{font-size: 52px}
+      .services{align-items:flex-start; flex-direction:row; flex-wrap:wrap; min-width:0; padding-top: 2px}
+      .hero{grid-template-columns: 1fr; padding: 22px; min-height: unset}
+      .hero-frame{inset: 16px 16px}
+      .plan{max-width: none}
+    }
+
+    /* Keep marquee moving unless user explicitly requests reduced motion */
+    @media (prefers-reduced-motion: reduce){
+      .bar-mover{animation: none;}
     }
   </style>
 </head>
 
 <body>
-
-<header>
-  <div class="nav">
-    <div class="logo">OCCTA.</div>
-    <nav class="menu">
-      <a href="#">Home</a>
-      <a href="#">Broadband</a>
-      <a href="#">SIM Plans</a>
-      <a href="#">Bundles</a>
-      <a href="#">Contact</a>
-    </nav>
-    <a class="nav-cta" href="#">Get started</a>
-  </div>
-</header>
-
-<section class="hero">
-  <div class="hero-card">
-    <div>
-      <h1>Internet, without the British drama.</h1>
-      <p>
-        Broadband, SIM plans and landlines with clear pricing,
-        honest support, and no surprises.
-      </p>
-      <div class="hero-adv">
-        The boring stuff done properly — so your connection isn’t a daily soap opera.
-      </div>
-      <div class="hero-actions">
-        <a class="btn-primary" href="#">Check availability</a>
-        <a class="btn-secondary" href="#">View plans</a>
-      </div>
+  <header>
+    <div class="container nav">
+      <div class="logo"><span class="logo-badge">＋</span>OCCTA</div>
+      <nav class="menu">
+        <a href="#top">Home</a>
+        <a href="#broadband">Broadband</a>
+        <a href="#sim">SIM Plans</a>
+        <a href="#landline">Landline</a>
+        <a href="#why">Why Occta</a>
+        <a href="#contact">Contact</a>
+      </nav>
+      <button class="pill" type="button" onclick="document.getElementById('plans').scrollIntoView({behavior:'smooth'})">Get started</button>
     </div>
-  </div>
-</section>
+  </header>
 
-<section class="section">
-  <div class="eyebrow">PICK A SERVICE</div>
-  <h2>Choose what you’re shopping for.</h2>
-  <p class="sub">
-    Broadband, SIM or Bundles — same Occta promise:
-    clear pricing, no faff, and support that actually helps.
-  </p>
+  <main id="top">
+    <div class="container">
 
-  <div class="tabs">
-    <div class="tab active">Broadband</div>
-    <div class="tab">SIM Plans</div>
-    <div class="tab">Bundles</div>
-  </div>
+      <!-- Brand + services -->
+      <section class="brand" aria-label="Occta">
+        <div class="brand-grid">
+          <div class="brand-name">OCCTA.</div>
+          <div class="services" aria-label="Services">
+            <a href="#broadband">Broadband</a>
+            <a href="#sim">SIM Plans</a>
+            <a href="#landline">Landline</a>
+          </div>
+        </div>
+      </section>
 
-  <div class="service-grid">
-    <div class="info-card">
-      <h3>Broadband — what you’ll get</h3>
-      <p class="sub">
-        Stable speeds, clean setup, and pricing you can understand
-        without a magnifying glass.
-      </p>
-      <div class="pills">
-        <span class="pill">Full Fibre options</span>
-        <span class="pill">Router included*</span>
-        <span class="pill">Clear monthly cost</span>
-        <span class="pill">Easy switching help</span>
-      </div>
-      <small class="sub">
-        *Availability varies by postcode. Final speed shown after availability check.
-      </small>
+      <!-- Moving bar -->
+      <section class="bar" aria-label="Announcement">
+        <div class="bar-inner">
+          <span class="badge">New</span>
+
+          <div class="bar-track" aria-hidden="true">
+            <!-- JS will duplicate this content so it always scrolls smoothly -->
+            <div class="bar-mover" id="marquee">
+              <span>Full Fibre from £19.99/mo</span>
+              <span class="sep">•</span>
+              <span>Clear pricing, no surprises</span>
+              <span class="sep">•</span>
+              <span>Broadband</span>
+              <span class="sep">•</span>
+              <span>SIM</span>
+              <span class="sep">•</span>
+              <span>Landline</span>
+              <span class="sep">•</span>
+              <span>Support that actually helps</span>
+              <span class="sep">•</span>
+              <span>Cancel online, no hassle</span>
+            </div>
+          </div>
+
+          <button class="bar-cta" type="button" onclick="document.getElementById('plans').scrollIntoView({behavior:'smooth'})">
+            View plans ↗
+          </button>
+        </div>
+      </section>
+
+      <!-- Hero -->
+      <section class="hero-wrap" aria-label="Hero">
+        <div class="hero-frame"></div>
+
+        <div class="hero">
+          <!-- Left -->
+          <div class="hero-left">
+            <h1>Internet, without the British drama.</h1>
+            <p>
+              Broadband, SIM plans and landlines with clear pricing, honest support, and no surprises.
+              The boring stuff done properly — so your connection isn’t a daily soap opera.
+            </p>
+
+            <div class="plan" aria-label="Featured plan">
+              <div class="plan-top">
+                <span class="mini">Best value</span>
+                <span class="type">Full Fibre</span>
+              </div>
+
+              <div class="price">
+                <span class="currency">£</span>
+                <span class="amount">19.99</span>
+                <span class="per">/mo</span>
+              </div>
+
+              <div class="plan-copy">
+                Full Fibre from <b>£19.99/month</b>. Availability and speeds vary by location. T&amp;Cs apply.
+              </div>
+
+              <div class="plan-meta" aria-label="Plan highlights">
+                <span class="meta-pill">No surprise price hikes</span>
+                <span class="meta-pill">Cancel online</span>
+                <span class="meta-pill">Router included</span>
+                <span class="meta-pill">UK support</span>
+              </div>
+            </div>
+
+            <div class="hero-actions">
+              <button class="cta" type="button" onclick="document.getElementById('postcode').focus()">🚀 Let’s get you online</button>
+              <a class="link" href="#plans">View plans →</a>
+            </div>
+          </div>
+
+          <!-- Right -->
+          <div class="hero-right">
+            <div class="glass" aria-label="Availability checker">
+              <div class="glass-head">
+                <h3>Check availability</h3>
+                <small>Preview</small>
+              </div>
+
+              <form class="form" id="postcodeForm">
+                <input class="input" id="postcode" name="postcode" type="text" autocomplete="postal-code"
+                       placeholder="Enter your UK postcode (e.g. SW1A 1AA)" aria-label="Enter your UK postcode">
+                <button class="btn" type="submit">Check</button>
+              </form>
+
+              <div class="hint">
+                We’ll show address-level availability here once integrations are complete.
+                For now, this checks the postcode format and confirms we can serve your area.
+              </div>
+
+              <div class="result" id="postcodeResult" role="status" aria-live="polite"></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Why -->
+      <section class="section" id="why">
+        <div class="section-head">
+          <div>
+            <div class="kicker"><span class="k-dot"></span> TRUST FIRST</div>
+            <div class="h2">No tricks. No small-print gymnastics.</div>
+            <div class="sub">
+              Occta is built around the reasons people leave their provider: surprise changes, hard cancellations,
+              unclear landline handling, and silence during outages.
+            </div>
+          </div>
+        </div>
+
+        <div class="cards">
+          <div class="card">
+            <div class="card-top">
+              <div class="icon">💷</div>
+              <div>
+                <h4>Clear monthly pricing</h4>
+                <p>Simple, readable pricing. If it changes, it’s shown upfront — in £/month.</p>
+              </div>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-top">
+              <div class="icon">🧾</div>
+              <div>
+                <h4>Cancel online</h4>
+                <p>End your service without call-centre battles. Fast and friction-free.</p>
+              </div>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-top">
+              <div class="icon">☎️</div>
+              <div>
+                <h4>Landlines handled properly</h4>
+                <p>Keep your number with clear steps and straightforward support.</p>
+              </div>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-top">
+              <div class="icon">📣</div>
+              <div>
+                <h4>Honest service updates</h4>
+                <p>If there’s an outage, we tell you — with real timelines and clarity.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Plans CTA -->
+      <section class="section" id="plans">
+        <div class="section-head">
+          <div>
+            <div class="kicker"><span class="k-dot"></span> VALUE + RELIABILITY</div>
+            <div class="h2">Economical doesn’t mean “cheap and chaotic”.</div>
+            <div class="sub">
+              It means fair, clear, and actually usable — with speeds and support that hold up day-to-day.
+            </div>
+          </div>
+        </div>
+
+        <div class="cta-band">
+          <div>
+            <h3>Ready for internet without the nonsense?</h3>
+            <p>Check your postcode, pick your service, and we’ll handle the boring bits.</p>
+          </div>
+          <div class="cta-row">
+            <button class="btn2 primary" type="button" onclick="document.getElementById('postcode').focus()">Check availability</button>
+            <a class="btn2" href="#broadband">Explore broadband</a>
+          </div>
+        </div>
+      </section>
+
+      <!-- Service anchors -->
+      <section class="section" id="broadband">
+        <div class="section-head">
+          <div>
+            <div class="kicker"><span class="k-dot"></span> BROADBAND</div>
+            <div class="h2">Broadband that just gets on with it.</div>
+            <div class="sub">Clear tiers, honest expectations, and upgrades when you actually need them.</div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="sim">
+        <div class="section-head">
+          <div>
+            <div class="kicker"><span class="k-dot"></span> SIM PLANS</div>
+            <div class="h2">SIM plans with no silly surprises.</div>
+            <div class="sub">Simple data tiers, clear billing, and a plan that fits normal life.</div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="landline">
+        <div class="section-head">
+          <div>
+            <div class="kicker"><span class="k-dot"></span> LANDLINE</div>
+            <div class="h2">Landlines, handled properly.</div>
+            <div class="sub">Keep your number. Clear steps. No accidental “upgrades”.</div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="contact">
+        <div class="section-head">
+          <div>
+            <div class="kicker"><span class="k-dot"></span> CONTACT</div>
+            <div class="h2">Need a hand?</div>
+            <div class="sub">Registered office: 22 Pavilion View, Huddersfield, HD3 3WU</div>
+          </div>
+        </div>
+      </section>
+
     </div>
+  </main>
 
-    <div class="plans">
-      <div class="plan">
-        <div class="badge">Popular</div>
-        <h4>Full Fibre Starter</h4>
-        <div class="price">£19.99 <span>/mo</span></div>
-        <div class="specs">
-          <div><strong>Speed</strong>Up to 150 Mbps</div>
-          <div><strong>Contract</strong>12 months</div>
-          <div><strong>Setup</strong>£0*</div>
-          <div><strong>Router</strong>Included*</div>
-        </div>
-        <div class="plan-pills">
-          <span>No price hikes</span>
-          <span>Cancel online</span>
-          <span>UK support</span>
-        </div>
-        <button>Get me online →</button>
-        <small>Good for streaming + work calls.</small>
-      </div>
-
-      <div class="plan">
-        <div class="badge">Best value</div>
-        <h4>Full Fibre Plus</h4>
-        <div class="price">£24.99 <span>/mo</span></div>
-        <div class="specs">
-          <div><strong>Speed</strong>Up to 300 Mbps</div>
-          <div><strong>Contract</strong>12 months</div>
-          <div><strong>Setup</strong>£0*</div>
-          <div><strong>Router</strong>Included*</div>
-        </div>
-        <button>Sort my Wi-Fi, mate →</button>
-        <small>Ideal for families + multiple devices.</small>
-      </div>
-
-      <div class="plan">
-        <div class="badge">Fast</div>
-        <h4>Full Fibre Max</h4>
-        <div class="price">£29.99 <span>/mo</span></div>
-        <div class="specs">
-          <div><strong>Speed</strong>Up to 500 Mbps</div>
-          <div><strong>Contract</strong>12 months</div>
-          <div><strong>Setup</strong>£0*</div>
-          <div><strong>Router</strong>Included*</div>
-        </div>
-        <button>I want the fast one →</button>
-        <small>For heavy streaming + gaming.</small>
-      </div>
+  <footer>
+    <div class="container footer">
+      <div>© <span id="year"></span> Occta Limited</div>
+      <div>22 Pavilion View, Huddersfield, HD3 3WU</div>
     </div>
-  </div>
-</section>
+  </footer>
 
+  <script>
+    // year
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+    // postcode checker (demo validation only)
+    const form = document.getElementById("postcodeForm");
+    const input = document.getElementById("postcode");
+    const out = document.getElementById("postcodeResult");
+
+    // UK postcode basic pattern (compact form)
+    const UK_POSTCODE = /^([A-Z]{1,2}\d[A-Z\d]?|\d[A-Z]{2})\d[A-Z]{2}$/;
+
+    function normalisePostcode(v){
+      return (v || "").trim().toUpperCase().replace(/\s+/g, " ");
+    }
+
+    form.addEventListener("submit", (e) => {
+      e.preventDefault();
+      const pc = normalisePostcode(input.value);
+      const compact = pc.replace(" ", "");
+
+      out.classList.add("show");
+
+      if(!pc){
+        out.innerHTML = "<strong>Please enter a postcode.</strong> Example: SW1A 1AA";
+        input.focus();
+        return;
+      }
+
+      if(!UK_POSTCODE.test(compact)){
+        out.innerHTML = "<strong>That doesn’t look like a UK postcode.</strong> Try SW1A 1AA.";
+        input.focus();
+        return;
+      }
+
+      out.innerHTML = "<strong>Looks good.</strong> We can confirm Full Fibre options for <strong>" + pc + "</strong> here (preview).";
+    });
+
+    // marquee: duplicate content to guarantee smooth movement on all screens
+    const marquee = document.getElementById("marquee");
+    // Duplicate once so the animation can move -50% reliably.
+    // We also add a spacer to prevent text sticking together.
+    const clone = marquee.cloneNode(true);
+    clone.id = "";
+    marquee.parentElement.appendChild(clone);
+
+    // Make both inline (same class already) and ensure the mover is actually "two halves".
+    // We wrap them in a single flex row so -50% equals exactly one set.
+    const track = marquee.parentElement;
+    const wrapper = document.createElement("div");
+    wrapper.className = "bar-mover";
+    wrapper.style.animation = getComputedStyle(marquee).animation;
+    wrapper.style.gap = getComputedStyle(marquee).gap || "18px";
+
+    // Move the two sets into wrapper
+    wrapper.appendChild(marquee);
+    wrapper.appendChild(clone);
+
+    // Replace old mover(s) with wrapper
+    track.innerHTML = "";
+    track.appendChild(wrapper);
+
+    // Respect reduced motion
+    if (window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+      wrapper.style.animation = "none";
+    }
+  </script>
 </body>
 </html>
