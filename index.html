@@ -223,7 +223,7 @@
       gap: 18px;
       white-space: nowrap;
       will-change: transform;
-      animation: marquee 18s linear infinite;
+      animation: marquee 22s linear infinite;
       font-size: 13px;
       font-weight: 800;
       color: rgba(15,23,42,.92);
@@ -299,6 +299,13 @@
       font-size: 14px;
       color: rgba(226,232,240,.92);
       max-width: 66ch;
+    }
+    .hero-advline{
+      margin-top: 10px;
+      font-size: 14px;
+      font-weight: 800;
+      color: rgba(248,250,252,.92);
+      opacity: .98;
     }
 
     /* Featured plan card (clean, no checkmarks) */
@@ -634,6 +641,7 @@
       display:grid;
       grid-template-columns: repeat(3, 1fr);
       gap: 14px;
+      align-items: stretch;
     }
     .plan2{
       background:#fff;
@@ -643,7 +651,7 @@
       padding: 16px;
       display:flex;
       flex-direction:column;
-      min-height: 250px;
+      min-height: 270px;
     }
     .plan2-top{
       display:flex;
@@ -709,7 +717,7 @@
       margin-top: 4px;
     }
     .plan2-cta{
-      margin-top: 14px;
+      margin-top: auto;
       border: none;
       border-radius: 999px;
       padding: 12px 14px;
@@ -884,6 +892,8 @@
             <h1>Internet, without the British drama.</h1>
             <p>
               Broadband, SIM plans and landlines with clear pricing, honest support, and no surprises.
+            </p>
+            <p class="hero-advline">
               The boring stuff done properly — so your connection isn’t a daily soap opera.
             </p>
 
@@ -1349,38 +1359,6 @@
 
       out.innerHTML = "<strong>Looks good.</strong> We can confirm Full Fibre options for <strong>" + pc + "</strong> here (preview).";
     });
-
-    // marquee: make sure it always scrolls smoothly
-    (function setupMarquee(){
-      const marquee = document.getElementById("marquee");
-      if(!marquee) return;
-
-      // If we've already wrapped it once, do nothing.
-      if (marquee.parentElement && marquee.parentElement.dataset && marquee.parentElement.dataset.wrapped === "1") return;
-
-      const track = marquee.parentElement;
-      if(!track) return;
-
-      // Clone the content once
-      const clone = marquee.cloneNode(true);
-      clone.id = "";
-
-      const wrapper = document.createElement("div");
-      wrapper.className = "bar-mover";
-      wrapper.style.animation = getComputedStyle(marquee).animation;
-      wrapper.style.gap = getComputedStyle(marquee).gap || "18px";
-
-      wrapper.appendChild(marquee);
-      wrapper.appendChild(clone);
-
-      track.innerHTML = "";
-      track.appendChild(wrapper);
-      track.dataset.wrapped = "1";
-
-      if (window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
-        wrapper.style.animation = "none";
-      }
-    })();
 
     // Tabs
     const tabs = document.querySelectorAll(".tab");
